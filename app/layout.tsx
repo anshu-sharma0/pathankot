@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     title: "Pathankot — Gateway to the Hills",
     description: "Discover Punjab's northern gateway: heritage, nature & culture.",
   },
+  verification: {
+    google: "BSTxCHZKuqwPadxhQgoKaIYDVnBnDvHLA7TI_A1t2EI",
+  },
 };
 
 export default function RootLayout({
