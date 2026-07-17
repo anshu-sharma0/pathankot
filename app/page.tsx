@@ -57,7 +57,7 @@ export default function Home() {
       <HeroSection />
 
       {/* --- Weather & Intro Section --- */}
-      <section className="relative z-20 -mt-18 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20">
+      <section className="relative z-20 -mt-12 lg:-mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20">
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Welcome Card */}
           <div className="lg:col-span-2 bg-white rounded-3xl px-8! py-6! shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col justify-center">

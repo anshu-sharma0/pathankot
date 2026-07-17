@@ -147,3 +147,7 @@ iframe {
   outline-offset: 2px;
   border-radius: 6px;
 }
+
+button {
+  cursor: pointer;
+}

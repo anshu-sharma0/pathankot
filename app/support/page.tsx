@@ -126,9 +126,9 @@ export default function SupportPage() {
 
   const currentDirectory = directories[activeTab];
   const filteredDirectory = currentDirectory.filter(
-    (item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-              item.number.includes(searchTerm) ||
-              item.email.toLowerCase().includes(searchTerm.toLowerCase())
+    (item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.number.includes(searchTerm) ||
+      item.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -151,12 +151,12 @@ export default function SupportPage() {
 
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-16 relative z-20 space-y-10">
-        
+
         {/* Quick Emergency Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-7 gap-3">
           {quickEmergency.map((item, idx) => (
-            <a 
-              key={item.name} 
+            <a
+              key={item.name}
               href={`tel:${item.number.split(',')[0].trim()}`}
               className="bg-white rounded-2xl p-4 shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-red-200 hover:shadow-red-100/50 transition-all group animate-fade-in-up"
               style={{ animationDelay: `${idx * 0.05}s` }}
@@ -174,10 +174,10 @@ export default function SupportPage() {
 
         {/* Detailed Emergency Categories */}
         <div className="grid lg:grid-cols-3 gap-8">
-          
+
           {/* Law & Order */}
           <div className="bg-white rounded-3xl p-6 shadow-md border border-slate-100 flex flex-col">
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
               <div className="p-3 bg-blue-50 text-blue-600 rounded-xl"><Shield className="h-5 w-5" /></div>
               <h2 className="text-xl font-extrabold text-slate-800">Police HQs</h2>
             </div>
@@ -198,7 +198,7 @@ export default function SupportPage() {
 
           {/* Healthcare & Ambulance */}
           <div className="bg-white rounded-3xl p-6 shadow-md border border-slate-100 flex flex-col">
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
               <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl"><Activity className="h-5 w-5" /></div>
               <h2 className="text-xl font-extrabold text-slate-800">Hospital & Blood Banks</h2>
             </div>
@@ -219,13 +219,13 @@ export default function SupportPage() {
 
           {/* Disaster & Fire */}
           <div className="bg-white rounded-3xl p-6 shadow-md border border-slate-100 flex flex-col">
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
               <div className="p-3 bg-orange-50 text-orange-600 rounded-xl"><Flame className="h-5 w-5" /></div>
               <h2 className="text-xl font-extrabold text-slate-800">Fire & Disaster</h2>
             </div>
-            <p className="text-sm text-slate-500 mb-6">
+            {/* <p className="text-sm text-slate-500 mb-6">
               Disaster Management falls under the Deputy Commissioner. Flash floods are common, do not hesitate to contact authorities.
-            </p>
+            </p> */}
             <div className="space-y-4 flex-1">
               {disasterContacts.map((contact) => (
                 <div key={contact.name} className="flex justify-between items-center group">
@@ -245,7 +245,7 @@ export default function SupportPage() {
 
         {/* --- Tabbed Directory Section --- */}
         <section className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden mt-12">
-          
+
           <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -255,18 +255,17 @@ export default function SupportPage() {
                   <p className="text-sm text-slate-500">Search for offices, police stations, utilities, and more.</p>
                 </div>
               </div>
-              
+
               {/* Tabs */}
               <div className="flex flex-wrap items-center gap-2">
                 {directoryTabs.map((tab) => (
-                  <button 
+                  <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id as keyof typeof directories)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
-                      activeTab === tab.id 
-                      ? "bg-slate-800 text-white shadow-md shadow-slate-300" 
+                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${activeTab === tab.id
+                      ? "bg-slate-800 text-white shadow-md shadow-slate-300"
                       : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-100"
-                    }`}
+                      }`}
                   >
                     <tab.icon className="h-4 w-4" /> {tab.label}
                   </button>
@@ -277,8 +276,8 @@ export default function SupportPage() {
             {/* Search */}
             <div className="relative w-full lg:w-80 shrink-0">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder={`Search ${directoryTabs.find(t => t.id === activeTab)?.label}...`}
                 className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow text-sm shadow-sm"
                 value={searchTerm}
@@ -286,7 +285,7 @@ export default function SupportPage() {
               />
             </div>
           </div>
-          
+
           <div className="overflow-x-auto min-h-[400px]">
             <table className="w-full text-left border-collapse">
               <thead>

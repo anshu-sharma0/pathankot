@@ -6,6 +6,7 @@ import { Menu, X, Phone, Globe, ChevronDown, Shield, MapPin, Mountain, Compass, 
 import WeatherWidget from "./WeatherWidget";
 import { formatDate } from "../utils/formatDate";
 import Image from "next/image";
+import MegaMenuPanel from "./MegaMenuPanel";
 
 /* ─── Types ─── */
 interface NavItem {
@@ -53,38 +54,7 @@ const navGroups: NavGroup[] = [
   }
 ];
 
-/* ─── Sub-components ─── */
-function MegaMenuPanel({ group, onClose }: { group: NavGroup; onClose: () => void }) {
-  return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[560px] rounded-3xl border border-white/60 bg-white/95 backdrop-blur-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] overflow-hidden z-50 animate-fade-in-up ring-1 ring-slate-900/5">
-      <div className="p-5 grid grid-cols-2 gap-2">
-        {group.items.map(({ label, href, icon: Icon, description }) => (
-          <Link
-            key={label}
-            href={href}
-            onClick={onClose}
-            className="group flex items-start gap-3.5 rounded-2xl p-3.5 transition-all duration-300 hover:bg-slate-50 hover:shadow-sm active:scale-[0.98]"
-          >
-            <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-50 to-amber-100/50 text-amber-600 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-sm border border-amber-200/30">
-              <Icon className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="text-[14px] font-bold text-slate-800 leading-tight group-hover:text-amber-700 transition-colors">{label}</p>
-              <p className="text-[13px] text-slate-500 mt-1 leading-snug font-medium">{description}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-      {/* Footer strip */}
-      <div className="px-5 py-4 bg-gradient-to-r from-slate-50 to-slate-100/50 border-t border-slate-200/60 flex items-center justify-between">
-        <span className="text-[13px] font-semibold text-slate-500">Pathankot City Portal</span>
-        <span className="text-[13px] font-bold text-amber-600 flex items-center gap-1.5">
-          <MapPin className="h-4 w-4" /> Punjab, India
-        </span>
-      </div>
-    </div>
-  );
-}
+
 
 /* ─── Main Navbar ─── */
 export default function Navbar() {
@@ -94,11 +64,12 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
 
-  // Close mega menu when clicking outside
+  // Close menus when clicking outside
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setOpenGroup(null);
+        setMobileOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -140,7 +111,7 @@ export default function Navbar() {
 
       {/* ── Main nav bar ── */}
       <nav className="bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] supports-[backdrop-filter]:bg-white/60">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1 sm:px-6 lg:px-8">
           {/* Brand */}
           <Link
             href="/"
@@ -226,7 +197,7 @@ export default function Navbar() {
 
         {/* ── Mobile drawer ── */}
         <div className={`lg:hidden absolute top-full left-0 right-0 w-full bg-white/95 backdrop-blur-2xl shadow-2xl overflow-hidden transition-all duration-300 ease-out border-b border-slate-200/50 ${mobileOpen ? "max-h-[85vh] opacity-100 overflow-y-auto translate-y-0" : "max-h-0 opacity-0 border-transparent -translate-y-2 pointer-events-none"}`}>
-          <div className="p-4" id="nav-mobile-links">
+          <div className="py-4" id="nav-mobile-links">
             {navGroups.map((group) => (
               <div key={group.id} className="bg-slate-50/50 rounded-2xl overflow-hidden border border-slate-100">
                 <button
@@ -257,7 +228,7 @@ export default function Navbar() {
                 </div>
               </div>
             ))}
-            <div className="grid grid-cols-2 gap-2 pt-2">
+            <div className="grid grid-cols-2 gap-2 p-4">
               <Link href="/support" className="flex items-center justify-center px-4 py-3 text-[14px] font-bold text-slate-700 transition-colors bg-slate-50 hover:bg-slate-100 rounded-xl border border-slate-200/50">
                 Support
               </Link>
@@ -265,7 +236,7 @@ export default function Navbar() {
                 Contact
               </Link>
             </div>
-            <div className="flex flex-col gap-2 pt-2">
+            <div className="flex flex-col gap-2 px-4">
               <a href="tel:112" className="w-full flex items-center justify-center gap-2 rounded-xl bg-red-50 border border-red-100 py-3 text-[14px] font-bold text-red-600 shadow-sm transition-active hover:bg-red-100">
                 <Phone className="h-4 w-4" /> 112 Emergency
               </a>
