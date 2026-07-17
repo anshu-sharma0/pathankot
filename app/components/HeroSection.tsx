@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen w-full items-center justify-start overflow-hidden pt-20"
+      className="relative flex min-h-[100svh] w-full items-center justify-start overflow-hidden pt-16 sm:pt-20"
     >
       {/* ── Background Video ── */}
       <div className="absolute inset-0 z-0">
@@ -28,7 +28,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-10 bg-linear-to-r from-slate-900/95 via-slate-900/70 to-slate-900/20" />
 
       {/* ── Main Content ── */}
-      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-24 md:pb-0">
         <div className="max-w-2xl">
           {/* Tag chip */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-200 backdrop-blur-md animate-fade-in-up">
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
           {/* Headline */}
           <h1
-            className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up"
+            className="text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl animate-fade-in-up"
             style={{ animationDelay: "0.15s" }}
           >
             <span className="block text-slate-100">Pathankot City</span>
@@ -52,7 +52,7 @@ export default function HeroSection() {
 
           {/* Subheadline */}
           <p
-            className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg sm:leading-8 animate-fade-in-up"
+            className="mt-4 sm:mt-6 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base lg:text-lg sm:leading-8 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
             Where the plains meet the mountains. Explore ancient temples, major transit connections, citizen services, and the vibrant trade heritage of Punjab&apos;s northern gateway.
@@ -60,13 +60,13 @@ export default function HeroSection() {
 
           {/* ── CTA Buttons ── */}
           <div
-            className="mt-10 flex flex-wrap items-center gap-4 animate-fade-in-up"
+            className="mt-6 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-4 animate-fade-in-up"
             style={{ animationDelay: "0.45s" }}
           >
             {/* Primary CTA */}
             <a
               href="#tourism"
-              className="group flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3.5 text-sm font-semibold text-slate-900 shadow-lg shadow-amber-500/30 transition-all hover:bg-amber-400 hover:shadow-amber-500/50 hover:-translate-y-0.5 active:scale-95"
+              className="group flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 sm:px-6 sm:py-3.5 text-sm font-semibold text-slate-900 shadow-lg shadow-amber-500/30 transition-all hover:bg-amber-400 hover:shadow-amber-500/50 hover:-translate-y-0.5 active:scale-95"
             >
               Explore City
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -75,7 +75,7 @@ export default function HeroSection() {
             {/* Secondary CTA */}
             <a
               href="#services"
-              className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/30 hover:-translate-y-0.5 active:scale-95"
+              className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 sm:px-6 sm:py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/30 hover:-translate-y-0.5 active:scale-95"
             >
               <PlayCircle className="h-4 w-4 text-slate-300 transition-colors group-hover:text-white" />
               Citizen Services

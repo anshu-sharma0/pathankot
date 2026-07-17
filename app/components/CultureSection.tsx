@@ -42,10 +42,10 @@ export default function CultureSection() {
           {cultureItems.map((item, i) => (
             <div
               key={item.title}
-              className="group flex flex-col sm:flex-row gap-4 sm:gap-6 rounded-2xl bg-white/60 p-4 sm:p-5 shadow-sm ring-1 ring-slate-100 backdrop-blur-sm transition-all hover:bg-white hover:shadow-md animate-fade-in-up"
+              className="group flex flex-col sm:flex-row gap-4 rounded-2xl bg-white/60 p-4 shadow-sm ring-1 ring-slate-100 backdrop-blur-sm transition-all hover:bg-white hover:shadow-md animate-fade-in-up"
               style={{ animationDelay: `${0.1 * i}s` }}
             >
-              <div className="relative h-40 w-full sm:h-32 sm:w-40 shrink-0 overflow-hidden rounded-xl bg-slate-100">
+              <div className="relative aspect-video sm:aspect-auto sm:h-32 w-full sm:w-40 shrink-0 overflow-hidden rounded-xl bg-slate-100">
                 <Image
                   src={item.image}
                   alt={item.title}

@@ -52,9 +52,9 @@ export default function Footer() {
     <footer className="relative border-t border-slate-200/60 bg-slate-950 text-slate-400">
       {/* ── Main grid ── */}
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-6">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-10">
           {/* Brand + info column (2-wide) */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5 mb-5 group">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-600 shadow-md">
                 <span className="text-base font-black text-white">P</span>

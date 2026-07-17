@@ -68,13 +68,13 @@ export default function ExplorePage() {
   return (
     <div className="min-h-screen">
       {/* ── Page Hero ── */}
-      <section className="relative overflow-hidden bg-linear-to-br from-slate-900 via-slate-800 to-amber-950 py-24 px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-linear-to-br from-slate-900 via-slate-800 to-amber-950 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-400 via-transparent to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-amber-300">
             <MapPin className="h-3 w-3" /> Punjab, India
           </div>
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight mb-6">
+          <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4 sm:mb-6">
             Explore <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-orange-500">Pathankot</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -86,11 +86,11 @@ export default function ExplorePage() {
       {/* ── Quick Facts ── */}
       <section className="bg-white border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {quickFacts.map(({ label, value }) => (
-              <div key={label} className="text-center p-3">
-                <p className="text-lg font-bold text-slate-800">{value}</p>
-                <p className="text-xs text-slate-400 mt-0.5 uppercase tracking-wider">{label}</p>
+              <div key={label} className="text-center p-2 sm:p-3">
+                <p className="text-base sm:text-lg font-bold text-slate-800 truncate">{value}</p>
+                <p className="text-[10px] sm:text-xs text-slate-400 mt-0.5 uppercase tracking-wider">{label}</p>
               </div>
             ))}
           </div>
@@ -98,7 +98,7 @@ export default function ExplorePage() {
       </section>
 
       {/* ── Highlights Grid ── */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="text-center mb-14">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-2">What Makes Us Special</p>
           <h2 className="text-3xl font-extrabold text-slate-800 sm:text-4xl">Everything to discover</h2>
@@ -126,7 +126,7 @@ export default function ExplorePage() {
 
       {/* ── City Story Block ── */}
       <section className="bg-slate-50 border-t border-slate-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-600 mb-3">The City&apos;s Story</p>

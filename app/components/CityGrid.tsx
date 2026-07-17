@@ -63,7 +63,7 @@ export default function CityGrid() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-3">
           Discover Pathankot
         </p>
-        <h2 className="text-3xl font-extrabold tracking-tight text-slate-800 sm:text-4xl">
+        <h2 className="text-2xl font-extrabold tracking-tight text-slate-800 sm:text-3xl lg:text-4xl">
           Experience Pathankot,{" "}
           <span className="gradient-text bg-linear-to-r from-amber-500 via-rose-500 to-indigo-500">
             like never before

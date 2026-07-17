@@ -19,7 +19,7 @@ export default function CityMap() {
           <div className="card-3d relative overflow-hidden rounded-3xl border border-slate-200/60 bg-white shadow-sm ring-1 ring-slate-100 p-2">
 
             {/* Styled map container */}
-            <div className="relative h-[400px] w-full rounded-2xl overflow-hidden bg-slate-100 sm:h-[500px]">
+            <div className="relative h-[280px] sm:h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden bg-slate-100">
               {/* Iframe for actual Google Maps embed of Pathankot */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54238.2570076262!2d75.61718049187303!3d32.26871583098592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391c7f4a21183207%3A0xc3b832b4b45b0fa8!2sPathankot%2C%20Punjab!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
@@ -36,7 +36,7 @@ export default function CityMap() {
               <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] rounded-2xl" />
 
               {/* Floating quick info card */}
-              <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-auto sm:max-w-sm pointer-events-auto">
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-auto sm:max-w-xs pointer-events-auto">
                 <div className="rounded-xl border border-white/40 bg-white/80 p-5 shadow-lg backdrop-blur-md">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sky-600">

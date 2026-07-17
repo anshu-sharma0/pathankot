@@ -119,7 +119,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full" ref={navRef}>
       {/* ── Slim utility bar ── */}
-      <div className="bg-slate-900 text-white/80 text-xs hidden sm:block">
+      <div className="bg-slate-900 text-white/80 text-xs hidden sm:block overflow-hidden">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 sm:px-6 lg:px-8">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5">
@@ -153,13 +153,13 @@ export default function Navbar() {
       <nav className="glass border-b border-slate-200/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           {/* Brand */}
-          <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0" id="nav-brand">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0 min-w-0" id="nav-brand">
             <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-600 shadow-md shadow-amber-200/50 transition-transform group-hover:scale-105">
               <span className="text-lg font-black text-white leading-none">P</span>
               <div className="absolute -inset-0.5 rounded-xl border border-amber-400/30" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-base font-bold tracking-tight text-slate-800 leading-tight">Pathankot</span>
+            <div className="flex flex-col min-w-0">
+              <span className="text-base font-bold tracking-tight text-slate-800 leading-tight truncate">Pathankot</span>
               <span className="text-[10px] font-medium uppercase tracking-widest text-slate-400 leading-none">City Portal</span>
             </div>
           </Link>
@@ -223,7 +223,7 @@ export default function Navbar() {
         </div>
 
         {/* ── Mobile drawer ── */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}>
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-[85vh] opacity-100 overflow-y-auto" : "max-h-0 opacity-0"}`}>
           <div className="border-t border-slate-100 divide-y divide-slate-100" id="nav-mobile-links">
             {navGroups.map((group) => (
               <div key={group.id}>

@@ -98,13 +98,13 @@ export default function AttractionsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative bg-linear-to-br from-teal-900 via-slate-800 to-slate-900 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative bg-linear-to-br from-teal-900 via-slate-800 to-slate-900 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-teal-400 via-transparent to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-500/20 bg-teal-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal-300">
             <Star className="h-3 w-3 fill-teal-300" /> 6 Top Picks
           </div>
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight mb-6">
+          <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4 sm:mb-6">
             Places to <span className="text-transparent bg-clip-text bg-linear-to-r from-teal-400 to-emerald-400">Visit</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -114,16 +114,16 @@ export default function AttractionsPage() {
       </section>
 
       {/* Attractions List */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="space-y-8">
           {attractions.map((attraction, idx) => (
             <div
               key={attraction.id}
               id={attraction.id}
-              className="group relative rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-100/50 transition-all hover:shadow-xl hover:border-slate-200 overflow-hidden"
+              className="group relative rounded-3xl border border-slate-100 bg-white p-5 sm:p-8 shadow-lg shadow-slate-100/50 transition-all hover:shadow-xl hover:border-slate-200 overflow-hidden"
             >
-              {/* Number */}
-              <div className="absolute top-6 right-8 text-7xl font-black text-slate-100 select-none">{String(idx + 1).padStart(2, "0")}</div>
+              {/* Number - hidden on mobile to prevent overlap */}
+              <div className="hidden sm:block absolute top-6 right-8 text-7xl font-black text-slate-100 select-none">{String(idx + 1).padStart(2, "0")}</div>
 
               <div className="relative z-10 flex flex-col lg:flex-row gap-6">
                 {/* Left */}
@@ -146,7 +146,7 @@ export default function AttractionsPage() {
                   </div>
                 </div>
                 {/* CTA */}
-                <div className="flex lg:flex-col items-center lg:items-end justify-between lg:justify-start gap-4 lg:min-w-[160px] lg:pl-6 lg:border-l lg:border-slate-100">
+                <div className="flex sm:flex-row lg:flex-col items-start sm:items-center lg:items-end justify-start sm:justify-between lg:justify-start gap-4 mt-4 lg:mt-0 lg:min-w-[160px] lg:pl-6 lg:border-l lg:border-slate-100">
                   <a
                     href={`https://maps.google.com?q=${encodeURIComponent(attraction.name + ", Pathankot, Punjab")}`}
                     target="_blank"

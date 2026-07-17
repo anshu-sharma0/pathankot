@@ -1,8 +1,8 @@
 export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24 pb-16">
-      <div className="px-8 max-w-7xl mx-auto w-full">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-4 sm:mb-6">
           Contact Us
         </h1>
         <p className="text-lg text-slate-600 max-w-3xl mb-12">
@@ -11,7 +11,7 @@ export default function ContactPage() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8">
+          <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-6 sm:p-8">
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
@@ -46,20 +46,20 @@ export default function ContactPage() {
 
           {/* Contact Info & Social */}
           <div className="flex flex-col gap-8">
-            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+            <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Official Address</h3>
               <p className="text-slate-600 mb-2">Pathankot Tourist Information Center</p>
               <p className="text-slate-600 mb-2">Near Railway Station (PTKC)</p>
               <p className="text-slate-600">Pathankot, Punjab, India - 145001</p>
             </div>
 
-            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+            <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Email & Phone</h3>
               <p className="text-slate-600 mb-2">Email: tourism@pathankot.city (Demo)</p>
               <p className="text-slate-600">Phone: +91 0186-2222222 (Demo)</p>
             </div>
 
-            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+            <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Social Media</h3>
               <p className="text-slate-600 mb-4">Share your travel stories with us using #ExplorePathankot</p>
               <div className="flex gap-4">

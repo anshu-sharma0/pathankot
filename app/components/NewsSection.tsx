@@ -69,11 +69,11 @@ export default function NewsSection() {
 
           {/* Featured News (Large) */}
           <div className="lg:col-span-2 perspective-container animate-fade-in-up">
-            <div className="card-3d group relative flex h-full flex-col justify-end overflow-hidden rounded-2xl bg-slate-900 p-6 sm:p-8">
+            <div className="card-3d group relative flex h-full min-h-[320px] sm:min-h-[380px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-900 p-5 sm:p-8">
               <div className="absolute inset-0 bg-violet-900/40 mix-blend-multiply transition-opacity group-hover:opacity-75" />
               <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/60 to-transparent" />
 
-              <div className="relative z-10 mt-32">
+              <div className="relative z-10">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="rounded-full bg-violet-500/20 px-3 py-1 text-xs font-semibold text-violet-200 ring-1 ring-violet-500/30 backdrop-blur-sm">
                     Notice
@@ -83,7 +83,7 @@ export default function NewsSection() {
                     Today
                   </span>
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-white sm:text-3xl">
+                <h3 className="mb-3 text-xl font-bold text-white sm:text-2xl lg:text-3xl">
                   Smart City Mission Phase 2 Begins in Pathankot
                 </h3>
                 <p className="mb-6 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
