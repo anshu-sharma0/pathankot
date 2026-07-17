@@ -1,128 +1,112 @@
-"use client";
-
-import { Search, ArrowRight, Mountain, Landmark, TrendingUp } from "lucide-react";
-import { useState } from "react";
-
-const quickLinks = [
-  { icon: Mountain, label: "Explore Tourism" },
-  { icon: Landmark, label: "City Services" },
-  { icon: TrendingUp, label: "Local Economy" },
-];
+import { ArrowRight, PlayCircle, MapPin, Building, Activity } from "lucide-react";
 
 export default function HeroSection() {
-  const [searchQuery, setSearchQuery] = useState("");
-
   return (
     <section
       id="hero"
-      className="relative overflow-hidden px-4 pt-16 pb-20 sm:px-6 sm:pt-20 sm:pb-28 lg:px-8 lg:pt-28 lg:pb-36"
+      className="relative flex min-h-screen w-full items-center justify-start overflow-hidden pt-20"
     >
-      {/* ── Background decorative orbs ── */}
-      <div className="orb top-[-10%] left-[-8%] h-[500px] w-[500px] bg-amber-200 animate-float" />
-      <div
-        className="orb top-[20%] right-[-5%] h-[400px] w-[400px] bg-sky-200 animate-float"
-        style={{ animationDelay: "2s" }}
-      />
-      <div
-        className="orb bottom-[-15%] left-[30%] h-[350px] w-[350px] bg-rose-200 animate-float"
-        style={{ animationDelay: "4s" }}
-      />
-
-      {/* ── Content ── */}
-      <div className="relative z-10 mx-auto max-w-5xl text-center">
-        {/* Tag chip */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200/60 bg-amber-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-amber-700 shadow-sm backdrop-blur-sm animate-fade-in-up">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
-          </span>
-          Official City Portal
-        </div>
-
-        {/* Heading */}
-        <h1
-          className="mx-auto max-w-4xl text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up"
-          style={{ animationDelay: "0.15s" }}
+      {/* ── Background Video ── */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover"
         >
-          <span className="block">Pathankot City</span>
-          <span className="block mt-2 gradient-text bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500">
-            Gateway to the Hills
-          </span>
-        </h1>
+          {/* PLACEHOLDER VIDEO: Replace the src below with your actual video path (e.g., "/videos/hero-bg.mp4") */}
+          <source
+            src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-        {/* Subtext */}
-        <p
-          className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg sm:leading-8 animate-fade-in-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          Where the plains meet the mountains — explore temples, transit connections,
-          citizen services, and the vibrant trade heritage of Punjab&apos;s northern gateway.
-        </p>
+      {/* ── Dark/Gradient Overlay ── */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/20" />
 
-        {/* ── Search bar ── */}
-        <div
-          className="mx-auto mt-10 max-w-2xl animate-fade-in-up"
-          style={{ animationDelay: "0.45s" }}
-        >
-          <div className="relative flex items-center rounded-2xl bg-white/90 shadow-sm shadow-slate-200/60 ring-1 ring-slate-100 backdrop-blur-sm transition-shadow duration-300 focus-within:shadow-md focus-within:ring-slate-200">
-            <Search className="ml-5 h-5 w-5 flex-shrink-0 text-slate-400" />
-            <input
-              id="hero-search"
-              type="text"
-              placeholder="Search services, places, contacts..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 bg-transparent px-4 py-4 text-sm text-slate-700 placeholder:text-slate-400 outline-none sm:text-base"
-            />
-            <button
-              id="hero-search-btn"
-              className="mr-2 flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-amber-200/50 transition-all hover:shadow-md hover:shadow-amber-300/50 active:scale-95"
+      {/* ── Main Content ── */}
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          {/* Tag chip */}
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-200 backdrop-blur-md animate-fade-in-up">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            Official City Portal
+          </div>
+
+          {/* Headline */}
+          <h1
+            className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up"
+            style={{ animationDelay: "0.15s" }}
+          >
+            <span className="block text-slate-100">Pathankot City</span>
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+              Gateway to the Hills
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p
+            className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg sm:leading-8 animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            Where the plains meet the mountains. Explore ancient temples, major transit connections, citizen services, and the vibrant trade heritage of Punjab&apos;s northern gateway.
+          </p>
+
+          {/* ── CTA Buttons ── */}
+          <div
+            className="mt-10 flex flex-wrap items-center gap-4 animate-fade-in-up"
+            style={{ animationDelay: "0.45s" }}
+          >
+            {/* Primary CTA */}
+            <a
+              href="#tourism"
+              className="group flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3.5 text-sm font-semibold text-slate-900 shadow-lg shadow-amber-500/30 transition-all hover:bg-amber-400 hover:shadow-amber-500/50 hover:-translate-y-0.5 active:scale-95"
             >
-              <span className="hidden sm:inline">Search</span>
-              <ArrowRight className="h-4 w-4" />
-            </button>
+              Explore City
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+
+            {/* Secondary CTA */}
+            <a
+              href="#services"
+              className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/30 hover:-translate-y-0.5 active:scale-95"
+            >
+              <PlayCircle className="h-4 w-4 text-slate-300 transition-colors group-hover:text-white" />
+              Citizen Services
+            </a>
           </div>
         </div>
+      </div>
 
-        {/* ── Quick link pills ── */}
-        <div
-          className="mt-8 flex flex-wrap items-center justify-center gap-3 animate-fade-in-up"
-          style={{ animationDelay: "0.6s" }}
-        >
-          {quickLinks.map(({ icon: Icon, label }) => (
-            <button
-              key={label}
-              className="flex items-center gap-2 rounded-full border border-slate-200/60 bg-white/70 px-4 py-2 text-xs font-medium text-slate-600 shadow-sm backdrop-blur-sm transition-all hover:border-slate-300 hover:bg-white hover:shadow-md active:scale-95 sm:text-sm"
-            >
-              <Icon className="h-4 w-4 text-slate-500" />
-              {label}
-            </button>
-          ))}
-        </div>
-
-        {/* ── Stats row ── */}
-        <div
-          className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4 animate-fade-in-up"
-          style={{ animationDelay: "0.75s" }}
-        >
-          {[
-            { value: "2.1L+", label: "Population" },
-            { value: "45+", label: "Heritage Sites" },
-            { value: "3", label: "Rail Junctions" },
-            { value: "24/7", label: "Citizen Support" },
-          ].map(({ value, label }) => (
-            <div
-              key={label}
-              className="rounded-xl border border-slate-100/80 bg-white/60 px-4 py-4 backdrop-blur-sm transition-all hover:bg-white/90 hover:shadow-sm"
-            >
-              <p className="text-2xl font-bold tracking-tight text-slate-800 sm:text-3xl">
-                {value}
-              </p>
-              <p className="mt-0.5 text-xs font-medium text-slate-400 sm:text-sm">
-                {label}
-              </p>
-            </div>
-          ))}
+      {/* ── Glassmorphism Stats Bar (Bottom) ── */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-black/30 backdrop-blur-xl animate-fade-in-up hidden md:block"
+        style={{ animationDelay: "0.6s" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 divide-x divide-white/10 py-5">
+            {[
+              { icon: MapPin, label: "Heritage Sites", value: "45+" },
+              { icon: Building, label: "Rail Junctions", value: "3 Major" },
+              { icon: Activity, label: "Citizen Support", value: "24/7" },
+            ].map(({ icon: Icon, label, value }) => (
+              <div key={label} className="flex items-center gap-4 px-6 first:pl-0 last:pr-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-amber-400">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xl font-bold text-white">{value}</p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400">{label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
