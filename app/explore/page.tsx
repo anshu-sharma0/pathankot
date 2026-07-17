@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin, Map } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Explore Pathankot | History, Culture & Heritage",
@@ -40,6 +40,14 @@ const highlights = [
     badge: "Year-Round",
     color: "purple",
   },
+  {
+    icon: Map,
+    title: "Geography & Demographics",
+    description: "Discover Pathankot's strategic geography, climate profile, diverse demographics, and cultural linguistic landscape.",
+    href: "/explore/geography",
+    badge: "City Profile",
+    color: "blue",
+  },
 ];
 
 const quickFacts = [
@@ -56,12 +64,14 @@ const colorMap: Record<string, string> = {
   teal: "bg-teal-50 text-teal-600 border-teal-200",
   rose: "bg-rose-50 text-rose-600 border-rose-200",
   purple: "bg-purple-50 text-purple-600 border-purple-200",
+  blue: "bg-blue-50 text-blue-600 border-blue-200",
 };
 const badgeColorMap: Record<string, string> = {
   amber: "bg-amber-100 text-amber-700",
   teal: "bg-teal-100 text-teal-700",
   rose: "bg-rose-100 text-rose-700",
   purple: "bg-purple-100 text-purple-700",
+  blue: "bg-blue-100 text-blue-700",
 };
 
 export default function ExplorePage() {
@@ -103,7 +113,7 @@ export default function ExplorePage() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-2">What Makes Us Special</p>
           <h2 className="text-3xl font-extrabold text-slate-800 sm:text-4xl">Everything to discover</h2>
         </div>
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {highlights.map(({ icon: Icon, title, description, href, badge, color }) => (
             <Link key={title} href={href} className="group relative flex flex-col gap-5 rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-100/50 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50">
               <div className="flex items-start justify-between">
