@@ -87,10 +87,6 @@ export default function CityCard({
             Explore
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
           </a>
-          {/* Animated underline */}
-          <span
-            className={`ml-1 h-px w-0 bg-linear-to-r ${accentGradient} transition-all duration-300 group-hover:w-8`}
-          />
         </div>
       </article>
     </div>

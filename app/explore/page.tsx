@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Explore Pathankot",
-  description: "Discover the rich history, Rajput heritage, vibrant culture, and delicious cuisine of Pathankot, Punjab.",
+  title: "Explore Pathankot | History, Culture & Heritage",
+  description: "Dive deep into the rich culture, history, and vibrant heritage of Pathankot, the gateway to Punjab and Himachal Pradesh.",
 };
 
 const highlights = [

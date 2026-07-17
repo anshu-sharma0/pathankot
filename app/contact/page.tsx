@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Pathankot Tourism",
+  description: "Get in touch with us for queries, emergency contacts, and support during your visit to Pathankot.",
+};
+
 export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24 pb-16">

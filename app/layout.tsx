@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://pathankot.vercel.app'),
   title: {
     default: "Pathankot — Gateway to the Hills | Punjab, India",
     template: "%s | Pathankot City Portal",
@@ -50,11 +51,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // JSON-LD Schema for Pathankot City
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": "Pathankot",
+    "description": "Gateway to the Himalayas, a city in Punjab, India known for its ancient temples, forts, and beautiful lakes.",
+    "touristType": [
+      "Nature Lovers",
+      "Pilgrims",
+      "History Buffs",
+      "Adventure Seekers"
+    ]
+  };
+
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

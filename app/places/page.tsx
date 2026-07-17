@@ -1,4 +1,10 @@
 import FamousPlaces from "../components/FamousPlaces";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Places to Visit in Pathankot | Tourism Guide",
+  description: "Explore top attractions in Pathankot including Ranjit Sagar Dam, Nurpur Fort, and Mukteshwar Temple.",
+};
 
 export default function PlacesPage() {
   return (

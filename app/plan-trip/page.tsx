@@ -1,5 +1,12 @@
 import HowToReach from "../components/HowToReach";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Plan Your Trip to Pathankot | Travel Itinerary",
+  description: "Plan the perfect weekend getaway or long vacation to Pathankot. Find travel tips, transport details, and itineraries.",
+};
+
 export default function PlanTripPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">

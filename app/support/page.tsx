@@ -1,5 +1,12 @@
 import EmergencyContacts from "../components/EmergencyContacts";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tourist Support | Pathankot City Portal",
+  description: "Find helpful resources, emergency contacts, and tourist support for a safe visit to Pathankot.",
+};
+
 export default function SupportPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">

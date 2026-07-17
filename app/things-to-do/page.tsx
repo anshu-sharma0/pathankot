@@ -1,5 +1,12 @@
 import CultureSection from "../components/CultureSection";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Top Things to Do in Pathankot | Activities & Adventures",
+  description: "Discover the best activities, local shopping, food spots, and nature trails in Pathankot.",
+};
+
 export default function ThingsToDoPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">

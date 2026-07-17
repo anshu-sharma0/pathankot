@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Discover Pathankot | Hidden Gems & Local Secrets",
+  description: "Uncover the hidden gems, offbeat locations, and local secrets of Pathankot.",
+};
+
 export default function DiscoverPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24 px-8 max-w-7xl mx-auto">
