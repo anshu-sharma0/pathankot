@@ -12,13 +12,16 @@ import {
   Building2,
 } from "lucide-react";
 
+import Link from "next/link";
+
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Tourism", href: "#tourism" },
-  { label: "Connectivity", href: "#transit" },
-  { label: "Culture", href: "#culture" },
-  { label: "News", href: "#news" },
-  { label: "Contacts", href: "#contacts" },
+  { label: "Home", href: "/" },
+  { label: "Discover", href: "/discover" },
+  { label: "Places to Visit", href: "/places" },
+  { label: "Things to Do", href: "/things-to-do" },
+  { label: "Plan Trip", href: "/plan-trip" },
+  { label: "Support", href: "/support" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -37,7 +40,7 @@ export default function Navbar() {
             </span>
             <span className="hidden md:flex items-center gap-1.5">
               <Building2 className="h-3 w-3 text-sky-400" />
-              Municipal Corporation Pathankot
+              Pathankot Tourism Board
             </span>
           </div>
 
@@ -68,7 +71,7 @@ export default function Navbar() {
       <nav className="glass border-b border-slate-100/80">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           {/* Logo / Brand */}
-          <a href="#" className="flex items-center gap-2.5 group" id="nav-brand">
+          <Link href="/" className="flex items-center gap-2.5 group" id="nav-brand">
             <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-600 shadow-md shadow-amber-200/50 transition-transform group-hover:scale-105">
               <span className="text-lg font-black text-white leading-none">P</span>
               {/* 3D lift ring */}
@@ -82,19 +85,19 @@ export default function Navbar() {
                 City Portal
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <ul className="hidden lg:flex items-center gap-1" id="nav-desktop-links">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a
+                <Link
                   href={link.href}
                   className="relative px-3.5 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 rounded-lg hover:bg-slate-50/80 group"
                 >
                   {link.label}
                   <span className="absolute bottom-0.5 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-linear-to-r from-amber-400 to-orange-500 transition-all duration-300 group-hover:w-4/5" />
-                </a>
+                </Link>
               </li>
             ))}
             {/* Dropdown trigger example */}
@@ -119,16 +122,16 @@ export default function Navbar() {
               <span className="relative">
                 <span
                   className={`transition-all duration-300 ${lang === "en"
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 -translate-y-2 absolute"
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-2 absolute"
                     }`}
                 >
                   EN
                 </span>
                 <span
                   className={`transition-all duration-300 ${lang === "pa"
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-2 absolute"
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-2 absolute"
                     }`}
                 >
                   ਪੰ
@@ -160,13 +163,13 @@ export default function Navbar() {
           <ul className="flex flex-col gap-1 px-4 pb-4" id="nav-mobile-links">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="block rounded-lg px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

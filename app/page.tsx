@@ -13,7 +13,6 @@ import SectionDivider from "./components/SectionDivider";
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col min-h-screen bg-linear-to-br from-slate-50 via-white to-zinc-50">
-      <Navbar />
       <main className="flex-1">
         <HeroSection />
 

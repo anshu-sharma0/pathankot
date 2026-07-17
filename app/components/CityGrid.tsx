@@ -1,14 +1,14 @@
-import { Mountain, TrainFront, Users, Factory } from "lucide-react";
+import { Mountain, Map, Leaf, UtensilsCrossed } from "lucide-react";
 import CityCard, { type CityCardProps } from "./CityCard";
 
 const cards: Omit<CityCardProps, "delay">[] = [
   {
     icon: Mountain,
-    title: "Tourism & Heritage",
-    subtitle: "Explore",
+    title: "Heritage & Spiritual",
+    subtitle: "Sacred Sites",
     description:
-      "Discover ancient temples, Mughal-era forts, and scenic mountain foothills — the staging point for Dalhousie, Dharamshala, and the Kangra Valley.",
-    highlights: ["Mukteshwar Temple", "Nurpur Fort", "Ranjit Sagar Dam"],
+      "Discover ancient temples like Mukteshwar Mahadev and explore the majestic ruins of Nurpur and Shahpurkandi forts.",
+    highlights: ["Mukteshwar Temple", "Nurpur Fort", "Kathgarh Mahadev"],
     gradient: "from-amber-50 to-orange-100/60",
     textColor: "text-amber-700",
     borderColor: "border-amber-200/60",
@@ -16,12 +16,12 @@ const cards: Omit<CityCardProps, "delay">[] = [
     accentGradient: "from-amber-400 to-orange-500",
   },
   {
-    icon: TrainFront,
-    title: "Transit Hub",
-    subtitle: "Connectivity",
+    icon: Leaf,
+    title: "Nature & Outdoors",
+    subtitle: "Scenic Beauty",
     description:
-      "A key rail-road junction connecting Punjab to J&K and Himachal. Three railway stations and a national highway network converge here.",
-    highlights: ["Pathankot Jn.", "Chakki Bank", "NH-44 / NH-154"],
+      "Experience the tranquility of the Ranjit Sagar Dam, enjoy boating, and drive across the breathtaking Atal Setu bridge.",
+    highlights: ["Ranjit Sagar Dam", "Atal Setu", "Madhopur"],
     gradient: "from-emerald-50 to-teal-100/60",
     textColor: "text-emerald-700",
     borderColor: "border-emerald-200/60",
@@ -29,30 +29,30 @@ const cards: Omit<CityCardProps, "delay">[] = [
     accentGradient: "from-emerald-400 to-teal-500",
   },
   {
-    icon: Users,
-    title: "Citizen Services",
-    subtitle: "Governance",
+    icon: Map,
+    title: "Gateway to the Hills",
+    subtitle: "Transit Hub",
     description:
-      "Access municipal utilities, file grievances, apply for permits, and track water & sanitation services from one digital window.",
-    highlights: ["Grievance Portal", "Property Tax", "Water & Sewer"],
-    gradient: "from-rose-50 to-red-100/60",
-    textColor: "text-rose-700",
-    borderColor: "border-rose-200/60",
-    iconBg: "bg-rose-100",
-    accentGradient: "from-rose-400 to-red-500",
-  },
-  {
-    icon: Factory,
-    title: "Trade & Economy",
-    subtitle: "Industry",
-    description:
-      "Home to traditional Loi textile weaving and a thriving stone-crushing corridor. Cross-border trade fuels the city's economy.",
-    highlights: ["Loi Weaving", "Stone Crushing", "Border Trade"],
+      "The perfect staging point for your journeys into Dalhousie, Dharamshala, Chamba, and the majestic Kangra Valley.",
+    highlights: ["Dalhousie Route", "Kangra Valley", "Chamba"],
     gradient: "from-sky-50 to-indigo-100/60",
     textColor: "text-sky-700",
     borderColor: "border-sky-200/60",
     iconBg: "bg-sky-100",
     accentGradient: "from-sky-400 to-indigo-500",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Culture & Cuisine",
+    subtitle: "Local Flavor",
+    description:
+      "Taste authentic Punjabi flavors, famous local sweets, and shop for traditional handicrafts in bustling local markets.",
+    highlights: ["Famous Kulchas", "Local Sweets", "Handicrafts"],
+    gradient: "from-rose-50 to-red-100/60",
+    textColor: "text-rose-700",
+    borderColor: "border-rose-200/60",
+    iconBg: "bg-rose-100",
+    accentGradient: "from-rose-400 to-red-500",
   },
 ];
 
@@ -64,13 +64,13 @@ export default function CityGrid() {
           Discover Pathankot
         </p>
         <h2 className="text-3xl font-extrabold tracking-tight text-slate-800 sm:text-4xl">
-          Everything the city offers,{" "}
-          <span className="gradient-text bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-500">
-            at a glance
+          Experience Pathankot,{" "}
+          <span className="gradient-text bg-linear-to-r from-amber-500 via-rose-500 to-indigo-500">
+            like never before
           </span>
         </h2>
         <p className="mt-4 text-base text-slate-500 leading-relaxed sm:text-lg">
-          From sacred heritage to modern services — explore all facets of Punjab&apos;s gateway city.
+          From sacred heritage and scenic outdoors to vibrant local culture, discover why Pathankot is the ultimate travel destination.
         </p>
       </div>
       <div className="mx-auto grid max-w-7xl gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
