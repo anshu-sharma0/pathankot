@@ -33,11 +33,11 @@ export default function CityCard({
       style={{ animationDelay: `${delay}s` }}
     >
       <article
-        className={`card-3d group relative flex h-full flex-col rounded-2xl border ${borderColor} bg-gradient-to-br ${gradient} p-6 backdrop-blur-sm transition-all sm:p-7`}
+        className={`card-3d group relative flex h-full flex-col rounded-2xl border ${borderColor} bg-linear-to-br ${gradient} p-6 backdrop-blur-sm transition-all sm:p-7`}
       >
         {/* Decorative top-right corner glow */}
         <div
-          className={`absolute -top-6 -right-6 h-24 w-24 rounded-full bg-gradient-to-br ${accentGradient} opacity-10 blur-2xl transition-opacity group-hover:opacity-20`}
+          className={`absolute -top-6 -right-6 h-24 w-24 rounded-full bg-linear-to-br ${accentGradient} opacity-10 blur-2xl transition-opacity group-hover:opacity-20`}
         />
 
         {/* Icon */}
@@ -89,7 +89,7 @@ export default function CityCard({
           </a>
           {/* Animated underline */}
           <span
-            className={`ml-1 h-px w-0 bg-gradient-to-r ${accentGradient} transition-all duration-300 group-hover:w-8`}
+            className={`ml-1 h-px w-0 bg-linear-to-r ${accentGradient} transition-all duration-300 group-hover:w-8`}
           />
         </div>
       </article>

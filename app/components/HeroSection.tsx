@@ -25,7 +25,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── Dark/Gradient Overlay ── */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/20" />
+      <div className="absolute inset-0 z-10 bg-linear-to-r from-slate-900/95 via-slate-900/70 to-slate-900/20" />
 
       {/* ── Main Content ── */}
       <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ export default function HeroSection() {
             style={{ animationDelay: "0.15s" }}
           >
             <span className="block text-slate-100">Pathankot City</span>
-            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+            <span className="block mt-2 text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-orange-500">
               Gateway to the Hills
             </span>
           </h1>
@@ -85,7 +85,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── Glassmorphism Stats Bar (Bottom) ── */}
-      <div 
+      <div
         className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-black/30 backdrop-blur-xl animate-fade-in-up hidden md:block"
         style={{ animationDelay: "0.6s" }}
       >
