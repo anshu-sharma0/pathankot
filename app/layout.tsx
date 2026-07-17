@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     "Punjab tourism",
     "Pathankot city",
   ],
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
+  appleWebApp: {
+    title: "Pathankot",
+    statusBarStyle: "default",
+  },
   openGraph: {
     title: "Pathankot — Gateway to the Hills | Punjab, India",
     description:
