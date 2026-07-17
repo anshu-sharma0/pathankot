@@ -94,7 +94,7 @@ export default function ServicesPage() {
       {/* Notice */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
         <div className="flex items-start gap-3 rounded-2xl border border-blue-100 bg-blue-50/50 p-4 text-sm text-blue-700">
-          <Info className="h-5 w-5 flex-shrink-0 mt-0.5" />
+          <Info className="h-5 w-5 shrink-0 mt-0.5" />
           <p>Some services are hosted on official government portals. You will be redirected to the respective government website when you click those links.</p>
         </div>
       </div>

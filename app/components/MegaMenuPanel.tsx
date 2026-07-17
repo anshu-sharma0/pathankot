@@ -30,7 +30,7 @@ export default function MegaMenuPanel({
                         href={href}
                         onClick={onClose}
                         className="group flex items-start gap-3.5 rounded-2xl px-2 py-3 transition-all duration-150 hover:bg-slate-50 active:scale-[0.98]" >
-                        <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-50 to-amber-100/50 text-amber-600 border border-amber-200/30 transition-transform duration-150 group-hover:scale-105">
+                        <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-amber-50 to-amber-100/50 text-amber-600 border border-amber-200/30 transition-transform duration-150 group-hover:scale-105">
                             <Icon className="h-5 w-5" />
                         </div>
 

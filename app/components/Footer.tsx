@@ -57,15 +57,15 @@ export default function Footer() {
             {/* Contact details */}
             <div className="space-y-2.5 text-xs">
               <p className="flex items-center gap-2.5 text-slate-500">
-                <MapPin className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
+                <MapPin className="h-3.5 w-3.5 text-amber-500 shrink-0" />
                 District Pathankot, Punjab – 145001
               </p>
               <p className="flex items-center gap-2.5 text-slate-500">
-                <Phone className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
+                <Phone className="h-3.5 w-3.5 text-amber-500 shrink-0" />
                 0186-222-4xxx
               </p>
               <p className="flex items-center gap-2.5 text-slate-500">
-                <Mail className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
+                <Mail className="h-3.5 w-3.5 text-amber-500 shrink-0" />
                 info@pathankot.city
               </p>
             </div>

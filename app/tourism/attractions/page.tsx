@@ -132,8 +132,8 @@ const categories = ["All", "Natural / Scenic beauty", "Religious", "Adventure", 
 export default function AttractionsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredAttractions = activeCategory === "All" 
-    ? attractions 
+  const filteredAttractions = activeCategory === "All"
+    ? attractions
     : attractions.filter(a => a.category.includes(activeCategory));
 
   return (
@@ -158,18 +158,17 @@ export default function AttractionsPage() {
       <div className="sticky top-[56px] sm:top-[68px] z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center gap-4 overflow-x-auto pb-1 scrollbar-hide">
-            <span className="flex items-center gap-2 text-sm font-semibold text-slate-500 flex-shrink-0">
+            <span className="flex items-center gap-2 text-sm font-semibold text-slate-500 shrink-0">
               <Filter className="h-4 w-4" /> Filter:
             </span>
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-bold transition-all ${
-                  activeCategory === cat
+                className={`shrink-0 px-5 py-2 rounded-full text-sm font-bold transition-all ${activeCategory === cat
                     ? "bg-teal-600 text-white shadow-md shadow-teal-200 ring-2 ring-teal-600 ring-offset-2"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -192,14 +191,14 @@ export default function AttractionsPage() {
               >
                 {/* Image Side */}
                 <div className="w-full lg:w-1/2 relative h-[350px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200/60 ring-1 ring-slate-100">
-                  <Image 
-                    src={attraction.image} 
-                    alt={attraction.name} 
-                    fill 
+                  <Image
+                    src={attraction.image}
+                    alt={attraction.name}
+                    fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   {/* Floating Number */}
                   <div className={`absolute top-6 ${isEven ? 'left-6' : 'right-6'} bg-white/90 backdrop-blur-sm text-slate-800 h-14 w-14 rounded-2xl flex items-center justify-center text-2xl font-black shadow-lg`}>
                     {String(idx + 1).padStart(2, "0")}
@@ -212,19 +211,19 @@ export default function AttractionsPage() {
                     <span className={`text-xs font-bold uppercase tracking-wider rounded-full px-3 py-1 ${attraction.badgeColor}`}>{attraction.badge}</span>
                     <span className={`text-xs font-semibold rounded-full px-3 py-1 ${attraction.tagColor}`}>{attraction.category}</span>
                   </div>
-                  
+
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-4">{attraction.name}</h2>
-                  
+
                   <div className="flex flex-wrap items-center gap-5 text-sm font-semibold text-slate-500 mb-6 bg-slate-50 inline-flex p-3 rounded-xl border border-slate-100">
                     <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4 text-teal-600" />{attraction.distance}</span>
                     <span className="flex items-center gap-1.5"><Clock className="h-4 w-4 text-amber-600" />{attraction.duration}</span>
                     <span className="flex items-center gap-1.5"><Star className="h-4 w-4 fill-amber-400 text-amber-400" />{attraction.rating} / 5</span>
                   </div>
-                  
+
                   <p className="text-lg text-slate-600 leading-relaxed mb-8">
                     {attraction.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-8">
                     {attraction.highlights.map((h) => (
                       <span key={h} className="text-sm font-medium bg-slate-100 border border-slate-200 text-slate-700 rounded-lg px-4 py-1.5 shadow-sm">
@@ -232,7 +231,7 @@ export default function AttractionsPage() {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex flex-wrap items-center gap-4 mt-auto">
                     <a
                       href={`https://maps.google.com?q=${encodeURIComponent(attraction.name + ", Pathankot, Punjab")}`}
@@ -247,11 +246,11 @@ export default function AttractionsPage() {
               </div>
             );
           })}
-          
+
           {filteredAttractions.length === 0 && (
             <div className="text-center py-20 bg-white rounded-3xl border border-slate-100 shadow-sm">
               <p className="text-slate-500 text-xl font-medium mb-4">No attractions found in this category.</p>
-              <button 
+              <button
                 onClick={() => setActiveCategory("All")}
                 className="inline-flex items-center justify-center bg-teal-50 text-teal-700 font-bold px-6 py-3 rounded-full hover:bg-teal-100 transition-colors"
               >

@@ -79,7 +79,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300" ref={navRef}>
       {/* ── Slim utility bar ── */}
-      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-slate-300 text-xs hidden sm:block overflow-hidden border-b border-white/5">
+      <div className="bg-linear-to-r from-slate-950 via-slate-900 to-slate-950 text-slate-300 text-xs hidden sm:block overflow-hidden border-b border-white/5">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8 font-medium">
           <div className="flex items-center gap-6">
             <WeatherWidget variant="compact" />
@@ -115,7 +115,7 @@ export default function Navbar() {
           {/* Brand */}
           <Link
             href="/"
-            className="flex items-center gap-2 flex-shrink-0 group"
+            className="flex items-center gap-2 shrink-0 group"
           >
             <div className="w-14 h-14 flex items-center justify-center transition-transform">
               <Image
@@ -129,7 +129,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col justify-center">
-              <span className="text-xl font-black tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent leading-none mb-0.5">
+              <span className="text-xl font-black tracking-tight bg-linear-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent leading-none mb-0.5">
                 Pathankot
               </span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-600/90">
@@ -219,7 +219,7 @@ export default function Navbar() {
                         className="flex items-center gap-3.5 px-4 py-1 rounded-xl text-[14px] font-semibold text-slate-600 hover:bg-white hover:text-amber-700 hover:shadow-sm transition-all border border-transparent hover:border-slate-200/60"
                       >
                         <div className="p-1.5 rounded-lg bg-slate-100 text-slate-500">
-                          <Icon className="h-4 w-4 flex-shrink-0" />
+                          <Icon className="h-4 w-4 shrink-0" />
                         </div>
                         {label}
                       </Link>
