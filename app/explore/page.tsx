@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin, Map } from "lucide-react";
+import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin, Map, Plane, Leaf } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Explore Pathankot | History, Culture & Heritage",
@@ -20,7 +20,7 @@ const highlights = [
     icon: Mountain,
     title: "Top Attractions",
     description: "Ranjit Sagar Dam, Mukteshwar Mahadev Temple (mentioned in the Mahabharata), Nurpur Fort, and Shahpurkandi. Each site tells a different story.",
-    href: "/explore/attractions",
+    href: "/tourism/attractions",
     badge: "Must-Visit",
     color: "teal",
   },
@@ -39,6 +39,22 @@ const highlights = [
     href: "/explore/events",
     badge: "Year-Round",
     color: "purple",
+  },
+  {
+    icon: Plane,
+    title: "Tourism Guide",
+    description: "A comprehensive guide on Pathankot's Religious, Adventure, and Hidden tourist spots.",
+    href: "/tourism",
+    badge: "Travel",
+    color: "rose",
+  },
+  {
+    icon: Leaf,
+    title: "Environment & Ecology",
+    description: "Explore the biodiversity, rivers, wildlife, and the ecological SWOT of Pathankot.",
+    href: "/explore/environment",
+    badge: "Nature",
+    color: "emerald",
   },
   {
     icon: Map,
@@ -65,6 +81,7 @@ const colorMap: Record<string, string> = {
   rose: "bg-rose-50 text-rose-600 border-rose-200",
   purple: "bg-purple-50 text-purple-600 border-purple-200",
   blue: "bg-blue-50 text-blue-600 border-blue-200",
+  emerald: "bg-emerald-50 text-emerald-600 border-emerald-200",
 };
 const badgeColorMap: Record<string, string> = {
   amber: "bg-amber-100 text-amber-700",
@@ -72,6 +89,7 @@ const badgeColorMap: Record<string, string> = {
   rose: "bg-rose-100 text-rose-700",
   purple: "bg-purple-100 text-purple-700",
   blue: "bg-blue-100 text-blue-700",
+  emerald: "bg-emerald-100 text-emerald-700",
 };
 
 export default function ExplorePage() {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Map, CloudRain, Users, BookOpen, Mountain, Droplets, Sun, Wind, Church, Languages, Activity, Image as ImageIcon, MapPin } from "lucide-react";
+import WeatherWidget from "@/app/components/WeatherWidget";
 
 export const metadata: Metadata = {
   title: "Geography & Demographics of Pathankot",
@@ -150,28 +151,57 @@ export default function GeographyPage() {
         {/* ── Climate & Demographics Grid ── */}
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Climate */}
-          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-amber-50 text-amber-600 rounded-xl"><CloudRain className="h-6 w-6" /></div>
               <h2 className="text-2xl font-extrabold text-slate-800">Climate Profile</h2>
             </div>
-            <p className="text-slate-600 mb-6">Pathankot experiences a Humid Subtropical Climate (Cwa) with four distinct seasons.</p>
-            <div className="grid grid-cols-2 gap-4">
+            <p className="text-slate-600 mb-6">Pathankot experiences a Humid Subtropical Climate with distinct seasonal variations, heavy monsoons, and mild to chilly winters.</p>
+            
+            <div className="mb-10">
+              <WeatherWidget variant="detailed" />
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               <div className="p-4 rounded-xl border border-rose-100 bg-rose-50/30">
                 <h4 className="font-bold text-slate-800 mb-1 flex items-center gap-2"><Sun className="h-4 w-4 text-rose-500" /> Summer</h4>
-                <p className="text-xs text-slate-500">April–June (28–44°C)</p>
+                <p className="text-xs text-slate-500 mb-2">Mid-May to Mid-June</p>
+                <p className="text-sm text-slate-600 leading-tight">Temperatures generally remain between 35°C to 45°C. Max can rarely touch 48°C.</p>
               </div>
               <div className="p-4 rounded-xl border-blue-100 bg-blue-50/30 border">
                 <h4 className="font-bold text-slate-800 mb-1 flex items-center gap-2"><Droplets className="h-4 w-4 text-blue-500" /> Monsoon</h4>
-                <p className="text-xs text-slate-500">July–Sept (~1,400 mm)</p>
+                <p className="text-xs text-slate-500 mb-2">Mid-June to Mid-Sept</p>
+                <p className="text-sm text-slate-600 leading-tight">Moderate to very heavy rainfall. South-west winds. Max rain recorded in a day is 195.5mm.</p>
               </div>
               <div className="p-4 rounded-xl border-amber-100 bg-amber-50/30 border">
                 <h4 className="font-bold text-slate-800 mb-1 flex items-center gap-2"><Wind className="h-4 w-4 text-amber-500" /> Autumn</h4>
-                <p className="text-xs text-slate-500">Oct–Nov (Pleasant)</p>
+                <p className="text-xs text-slate-500 mb-2">Mid-Sept to Mid-Nov</p>
+                <p className="text-sm text-slate-600 leading-tight">Pleasant temperatures between 16°C to 27°C, dropping to 11°C minimum.</p>
               </div>
               <div className="p-4 rounded-xl border-emerald-100 bg-emerald-50/30 border">
                 <h4 className="font-bold text-slate-800 mb-1 flex items-center gap-2"><CloudRain className="h-4 w-4 text-emerald-500" /> Winter</h4>
-                <p className="text-xs text-slate-500">Dec–Feb (3–22°C)</p>
+                <p className="text-xs text-slate-500 mb-2">November to Mid-March</p>
+                <p className="text-sm text-slate-600 leading-tight">Max 7-15°C, Min 0-8°C. Persistent rain for 2-3 days with hail. Snowfall occurred in 2012.</p>
+              </div>
+              <div className="p-4 rounded-xl border-orange-100 bg-orange-50/30 border">
+                <h4 className="font-bold text-slate-800 mb-1 flex items-center gap-2"><Sun className="h-4 w-4 text-orange-500" /> Spring</h4>
+                <p className="text-xs text-slate-500 mb-2">Mid-Feb to Mid-April</p>
+                <p className="text-sm text-slate-600 leading-tight">The most enjoyable climate. Max 16-25°C, Min 9-18°C.</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="border-t border-slate-100 pt-4">
+                <h4 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wider">Rainfall</h4>
+                <p className="text-sm text-slate-600">~70% of rainfall occurs from June to Sept, and ~18% occurs between Dec and Feb. Monsoon usually arrives early July.</p>
+              </div>
+              <div className="border-t border-slate-100 pt-4">
+                <h4 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wider">Humidity</h4>
+                <p className="text-sm text-slate-600">High in the mornings ({'>'}70%). Drops in afternoons. Driest part is summer afternoon (~25% or less).</p>
+              </div>
+              <div className="border-t border-slate-100 pt-4">
+                <h4 className="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wider">Winds</h4>
+                <p className="text-sm text-slate-600">Generally light. Easterlies and south-easterlies dominate during the south-west monsoon season.</p>
               </div>
             </div>
           </section>

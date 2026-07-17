@@ -1,43 +1,24 @@
 import Link from "next/link";
 import { Heart, MapPin, Phone, Mail, Camera, Share2, Video, Train, AlertTriangle } from "lucide-react";
+import Image from "next/image";
 
 const footerColumns = [
   {
-    title: "Explore Pathankot",
+    title: "Discover Pathankot",
     links: [
-      { label: "History & Heritage", href: "/explore/history" },
-      { label: "Top Attractions", href: "/explore/attractions" },
-      { label: "Culture & Cuisine", href: "/explore/culture" },
-      { label: "Events & Festivals", href: "/explore/events" },
+      { label: "City Profile", href: "/explore" },
+      { label: "Geography & Climate", href: "/explore/geography" },
+      { label: "Top Attractions", href: "/tourism/attractions" },
     ],
   },
   {
-    title: "Plan Your Visit",
+    title: "Plan & Support",
     links: [
-      { label: "Getting Here", href: "/plan/getting-here" },
-      { label: "Accommodation", href: "/plan/stay" },
-      { label: "Itineraries", href: "/plan/itineraries" },
-      { label: "Gateway Guides", href: "/plan/gateway" },
-    ],
-  },
-  {
-    title: "Citizen Services",
-    links: [
-      { label: "Pay Bills", href: "/services/payments" },
-      { label: "Certificates", href: "/services/certificates" },
-      { label: "Lodge Grievance", href: "/services/grievances" },
-      { label: "Tourist Support", href: "/services/support" },
-    ],
-  },
-  {
-    title: "Business & More",
-    links: [
-      { label: "Why Invest", href: "/business/invest" },
-      { label: "Key Industries", href: "/business/industries" },
-      { label: "Tenders & Notices", href: "/business/tenders" },
+      { label: "Travel & Itineraries", href: "/plan" },
+      { label: "Citizen Directory", href: "/support" },
       { label: "Contact Us", href: "/contact" },
     ],
-  },
+  }
 ];
 
 const emergencyContacts = [
@@ -52,13 +33,17 @@ export default function Footer() {
     <footer className="relative border-t border-slate-200/60 bg-slate-950 text-slate-400">
       {/* ── Main grid ── */}
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-10">
-          {/* Brand + info column (2-wide) */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-5 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-600 shadow-md">
-                <span className="text-base font-black text-white">P</span>
-              </div>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          {/* Brand + info column */}
+          <div className="lg:col-span-5">
+            <Link href="/" className="inline-flex gap-2 items-center mb-4 group">
+              <Image
+                src="/logo.svg"
+                alt="Pathankot Logo"
+                width={60}
+                height={60}
+                className="rounded-xl"
+              />
               <div>
                 <p className="text-sm font-bold text-white">Pathankot</p>
                 <p className="text-[10px] uppercase tracking-widest text-slate-500">City Portal</p>
@@ -83,51 +68,33 @@ export default function Footer() {
                 <Mail className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
                 info@pathankot.city
               </p>
-              <p className="flex items-center gap-2.5 text-slate-500">
-                <Train className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
-                Nearest Rly: PTKC (Pathankot Cantt)
-              </p>
             </div>
 
-            {/* Social links */}
-            <div className="mt-6 flex items-center gap-3">
-              {[
-                { icon: Camera, label: "Instagram", href: "#" },
-                { icon: Share2, label: "Facebook", href: "#" },
-                { icon: Video, label: "YouTube", href: "#" },
-              ].map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-800 text-slate-500 transition-all hover:border-amber-500/40 hover:bg-amber-500/10 hover:text-amber-400"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Link columns */}
-          {footerColumns.map((col) => (
-            <div key={col.title}>
-              <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-4 border-b border-slate-800 pb-2">
-                {col.title}
-              </h4>
-              <ul className="space-y-2.5">
-                {col.links.map(({ label, href }) => (
-                  <li key={label}>
-                    <Link
-                      href={href}
-                      className="text-sm text-slate-500 transition-colors hover:text-amber-400"
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 gap-8">
+            {footerColumns.map((col) => (
+              <div key={col.title}>
+                <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 mb-5 border-b border-slate-800 pb-3">
+                  {col.title}
+                </h4>
+                <ul className="space-y-3">
+                  {col.links.map(({ label, href }) => (
+                    <li key={label}>
+                      <Link
+                        href={href}
+                        className="text-sm text-slate-400 transition-colors hover:text-amber-400 flex items-center gap-2"
+                      >
+                        <span className="h-px w-2 bg-slate-700 transition-all group-hover:w-4 group-hover:bg-amber-400"></span>
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* ── Emergency strip ── */}
@@ -157,10 +124,6 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Pathankot City Portal. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
             Made with <Heart className="h-3 w-3 text-rose-500" /> for Pathankot
-            <span className="mx-2 h-3 w-px bg-slate-700" />
-            <Link href="/sitemap" className="hover:text-slate-400 transition-colors">Sitemap</Link>
-            <span className="mx-1">·</span>
-            <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy</Link>
           </p>
         </div>
       </div>

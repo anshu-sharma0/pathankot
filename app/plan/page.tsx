@@ -1,50 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Train, Car, Plane, Clock, ArrowRight, MapPin, Navigation, Hotel, Compass } from "lucide-react";
+import { Plane, Train, Bus, MapPin, Phone, Clock, Compass, ArrowRight, Hotel, Navigation } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Plan Your Visit to Pathankot",
-  description: "Complete travel guide to Pathankot: how to get here by train, road or air, curated itineraries, accommodation options, and gateway guides to Dalhousie, Dharamshala and Kashmir.",
+  title: "Plan Your Trip to Pathankot | Complete Guide",
+  description: "Detailed transport guide, curated itineraries, and gateway destinations for Pathankot.",
 };
 
-const transport = [
-  {
-    icon: Train,
-    mode: "By Train",
-    color: "blue",
-    primary: "Pathankot Cantt (PTKC)",
-    secondary: "Pathankot City (PTK)",
-    details: [
-      "Pathankot Cantt is the main junction — connected to Delhi, Mumbai, Amritsar, Jammu & Kolkata.",
-      "Pathankot City station is closer to the city centre for local access.",
-      "Chakki Bank (CCB) serves the narrow-gauge Kangra Valley Railway to Jogindernagar.",
-      "Key trains: Himachal Express, Shan-e-Punjab Express, Pathankot-Jogindernagar Rail.",
-    ],
-  },
-  {
-    icon: Car,
-    mode: "By Road",
-    color: "green",
-    primary: "NH-44 (Delhi–Srinagar Highway)",
-    secondary: "Pathankot Bus Stand",
-    details: [
-      "Pathankot is ~505 km from Delhi (8–9 hrs by car), ~100 km from Amritsar (2 hrs), and ~90 km from Jammu.",
-      "State buses from PPRTC & HRTC connect to Dalhousie, Dharamshala, Chamba, and Shimla.",
-      "Ample parking available near railway stations and the town centre.",
-    ],
-  },
-  {
-    icon: Plane,
-    mode: "By Air",
-    color: "sky",
-    primary: "Pathankot Airport (IXP)",
-    secondary: "Alternate: Amritsar (ATQ) — 100 km",
-    details: [
-      "Pathankot has a small domestic airport with limited commercial flights. Currently mostly used by the Indian Air Force.",
-      "The nearest major airport is Sri Guru Ram Dass Jee International Airport (Amritsar) — around 100 km away.",
-      "From Amritsar airport, hire a taxi or take a bus to reach Pathankot (~2 hours).",
-    ],
-  },
+const roadDistances = [
+  { city: "Mukerian", distance: "40 km" },
+  { city: "Dalhousie", distance: "70 km" },
+  { city: "Dharamshala", distance: "100 km" },
+  { city: "Palampur", distance: "100 km" },
+  { city: "Chamba", distance: "100 km" },
+  { city: "Jammu", distance: "100 km" },
+  { city: "Amritsar", distance: "108 km" },
+  { city: "Chandigarh", distance: "237 km" },
+  { city: "Delhi", distance: "481 km" },
 ];
 
 const itineraries = [
@@ -59,7 +31,6 @@ const itineraries = [
       { time: "1:00 PM", place: "Local lunch — Chole Kulche at Dhangu Road" },
       { time: "3:00 PM", place: "Shahpurkandi Fort — riverside walk" },
       { time: "6:00 PM", place: "Pathankot market — local shopping & sweets" },
-      { time: "8:00 PM", place: "Dinner at a local dhaba & depart/rest" },
     ],
   },
   {
@@ -82,134 +53,204 @@ const gateways = [
   { name: "Chamba", distance: "118 km", time: "3.5 hrs", desc: "Ancient town along the Ravi river with stunning Chamba temples and handicrafts.", color: "amber" },
   { name: "Jammu", distance: "90 km", time: "2 hrs", desc: "City of temples and gateway to Kashmir. Vaishno Devi pilgrimage base.", color: "rose" },
   { name: "Amritsar", distance: "100 km", time: "2 hrs", desc: "The Golden Temple, Wagah Border, and the beating retreat ceremony.", color: "orange" },
-  { name: "Kasauli", distance: "190 km", time: "4 hrs", desc: "A quiet colonial hill station with Christ Church and the Monkey Point.", color: "teal" },
 ];
 
 const colorMap: Record<string, { card: string; badge: string; icon: string }> = {
-  blue: { card: "border-blue-100 bg-blue-50/30", badge: "bg-blue-100 text-blue-700", icon: "bg-blue-100 text-blue-600" },
-  green: { card: "border-green-100 bg-green-50/30", badge: "bg-green-100 text-green-700", icon: "bg-green-100 text-green-600" },
-  sky: { card: "border-sky-100 bg-sky-50/30", badge: "bg-sky-100 text-sky-700", icon: "bg-sky-100 text-sky-600" },
   amber: { card: "border-amber-100 bg-amber-50/30", badge: "bg-amber-100 text-amber-700", icon: "bg-amber-100 text-amber-600" },
   purple: { card: "border-purple-100 bg-purple-50/30", badge: "bg-purple-100 text-purple-700", icon: "bg-purple-100 text-purple-600" },
   emerald: { card: "border-emerald-100 bg-emerald-50/30", badge: "bg-emerald-100 text-emerald-700", icon: "bg-emerald-100 text-emerald-600" },
+  sky: { card: "border-sky-100 bg-sky-50/30", badge: "bg-sky-100 text-sky-700", icon: "bg-sky-100 text-sky-600" },
   rose: { card: "border-rose-100 bg-rose-50/30", badge: "bg-rose-100 text-rose-700", icon: "bg-rose-100 text-rose-600" },
   orange: { card: "border-orange-100 bg-orange-50/30", badge: "bg-orange-100 text-orange-700", icon: "bg-orange-100 text-orange-600" },
-  teal: { card: "border-teal-100 bg-teal-50/30", badge: "bg-teal-100 text-teal-700", icon: "bg-teal-100 text-teal-600" },
 };
 
 export default function PlanTripPage() {
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative bg-linear-to-br from-slate-800 via-slate-900 to-emerald-950 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-emerald-400 via-transparent to-transparent" />
+    <div className="min-h-screen bg-slate-50 pb-20">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-linear-to-br from-indigo-950 via-slate-900 to-indigo-900 py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-400 via-transparent to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-300">
-            <MapPin className="h-3 w-3" /> Your Complete Travel Guide
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-300">
+            <MapPin className="h-3 w-3" /> Gateway to the Himalayas
           </div>
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight mb-6">
-            Plan Your <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-teal-400">Visit</span>
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-7xl tracking-tight mb-6">
+            Plan Your <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-sky-400">Journey</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Everything you need to plan the perfect trip — from how to get here to curated itineraries and gateway guides to the Himalayas.
+            Pathankot is highly accessible and serves as the meeting point of Punjab, Jammu & Kashmir, and Himachal Pradesh. Plan your trip seamlessly.
           </p>
         </div>
       </section>
 
-      {/* How to Reach */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-3xl font-extrabold text-slate-800 mb-10 text-center">Getting to Pathankot</h2>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {transport.map(({ icon: Icon, mode, color, primary, secondary, details }) => (
-            <div key={mode} className={`rounded-3xl border p-7 ${colorMap[color].card}`}>
-              <div className={`flex h-12 w-12 items-center justify-center rounded-2xl mb-5 ${colorMap[color].icon}`}>
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-1">{mode}</h3>
-              <p className="text-sm font-semibold text-slate-600 mb-0.5">{primary}</p>
-              <p className="text-xs text-slate-400 mb-4">{secondary}</p>
-              <ul className="space-y-2.5">
-                {details.map((d, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-400" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Main Content */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-16 relative z-20 space-y-12">
 
-      {/* Itineraries */}
-      <section className="bg-slate-50 border-t border-slate-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <h2 className="text-3xl font-extrabold text-slate-800 mb-10 text-center">Curated Itineraries</h2>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {itineraries.map(({ title, icon: Icon, tag, color, stops }) => (
-              <div key={title} className={`rounded-3xl border p-7 ${colorMap[color].card}`}>
-                <div className="flex items-start justify-between mb-6">
+        {/* HOW TO REACH */}
+        <div className="space-y-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-extrabold text-slate-800">How to Reach</h2>
+          </div>
+
+          {/* AIR */}
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row gap-8 items-stretch group hover:border-indigo-200 transition-colors">
+            <div className="md:w-1/3 flex flex-col justify-center">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                <Plane className="h-8 w-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-3">By Air</h3>
+              <p className="text-slate-500 leading-relaxed">
+                Pathankot has its own Domestic Airport (IXP) just 3 kms from the main city. It is highly convenient for direct travelers from Delhi.
+              </p>
+            </div>
+            <div className="md:w-2/3 grid sm:grid-cols-2 gap-6 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+              <div>
+                <h4 className="font-semibold text-slate-800 mb-2">Pathankot Airport (IXP)</h4>
+                <p className="text-sm text-slate-600 mb-4">Located on the Pathankot to Majra Road under the Pathankot Air Force Station.</p>
+
+                <h4 className="font-semibold text-slate-800 mb-2">Alliance Air Flights</h4>
+                <p className="text-sm text-slate-600">The 70-seater airbus currently has 3 flights a week: Monday, Tuesday, and Thursday from Pathankot to New Delhi (IXP to DEL).</p>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Nearest Int. Airport</p>
+                  <p className="text-sm font-medium text-slate-800">Sri Guru Ram Dass Ji Int. Airport, Amritsar (119 Kms)</p>
+                </div>
+                <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Contact Airport</p>
+                  <a href="tel:01862100044" className="flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700">
+                    <Phone className="h-4 w-4" /> 0186-2100044
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RAIL */}
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row gap-8 items-stretch group hover:border-rose-200 transition-colors">
+            <div className="md:w-1/3 flex flex-col justify-center">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-rose-50 text-rose-600 mb-6 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                <Train className="h-8 w-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-3">By Rail</h3>
+              <p className="text-slate-500 leading-relaxed">
+                Pathankot is a major railway junction. It links cities like Gurdaspur, Amritsar, Jammu, Jalandhar, Bathinda, and Rourkela.
+              </p>
+            </div>
+            <div className="md:w-2/3 bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col justify-center">
+              <h4 className="font-semibold text-slate-800 mb-3">Major Trains</h4>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {['Adi Jat Express', 'Bti Jat Express', 'Jammu Mail', 'Dauladhar Express', 'Shan-e-Punjab'].map(train => (
+                  <span key={train} className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 shadow-sm">
+                    {train}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                  <div className="bg-rose-100 p-2 rounded-lg text-rose-600"><Phone className="h-4 w-4" /></div>
                   <div>
-                    <span className={`text-xs font-semibold rounded-full px-3 py-1 mb-3 inline-block ${colorMap[color].badge}`}>{tag}</span>
-                    <h3 className="text-2xl font-bold text-slate-800">{title}</h3>
-                  </div>
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${colorMap[color].icon}`}>
-                    <Icon className="h-6 w-6" />
+                    <p className="text-xs font-semibold text-slate-500">Station Superintendent</p>
+                    <p className="text-sm font-bold text-slate-800">0186-2220417</p>
                   </div>
                 </div>
-                <div className="space-y-3">
-                  {stops.map(({ time, place }) => (
-                    <div key={time} className="flex items-start gap-3">
-                      <span className="text-xs font-bold text-slate-400 w-20 flex-shrink-0 pt-0.5">{time}</span>
-                      <span className="text-sm text-slate-700">{place}</span>
+                <div className="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                  <div className="bg-rose-100 p-2 rounded-lg text-rose-600"><Phone className="h-4 w-4" /></div>
+                  <div>
+                    <p className="text-xs font-semibold text-slate-500">General Enquiry</p>
+                    <p className="text-sm font-bold text-slate-800">131, 139</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ROAD */}
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row gap-8 items-stretch group hover:border-teal-200 transition-colors">
+            <div className="md:w-1/3 flex flex-col justify-center">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                <Bus className="h-8 w-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-3">By Road</h3>
+              <p className="text-slate-500 leading-relaxed mb-4">
+                Pathankot is highly connected via the Punjab State Road Transport Corporation (PSRTC) and serves as the base camp for moving to hill stations.
+              </p>
+            </div>
+            <div className="md:w-2/3">
+              <h4 className="font-semibold text-slate-800 mb-4 px-2 text-sm uppercase tracking-wider">Driving Distances</h4>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {roadDistances.map((loc) => (
+                  <div key={loc.city} className="flex justify-between items-center bg-slate-50 border border-slate-100 px-4 py-3 rounded-xl hover:bg-white hover:border-teal-200 hover:shadow-md transition-all cursor-default">
+                    <span className="font-medium text-slate-700 text-sm">{loc.city}</span>
+                    <span className="text-xs font-bold text-teal-600 bg-teal-50 px-2 py-1 rounded-md">{loc.distance}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ITINERARIES */}
+        {/* <section className="pt-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-slate-800 mb-3">Curated Itineraries</h2>
+            <p className="text-slate-500 max-w-xl mx-auto">Make the most of your time with our hand-crafted travel plans.</p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {itineraries.map(({ title, icon: Icon, tag, color, stops }) => (
+              <div key={title} className={`rounded-3xl border p-8 ${colorMap[color].card} shadow-lg shadow-slate-200/20`}>
+                <div className="flex items-start justify-between mb-8">
+                  <div>
+                    <span className={`text-xs font-bold uppercase tracking-wider rounded-full px-3 py-1 mb-3 inline-block ${colorMap[color].badge}`}>{tag}</span>
+                    <h3 className="text-2xl font-bold text-slate-800">{title}</h3>
+                  </div>
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${colorMap[color].icon}`}>
+                    <Icon className="h-7 w-7" />
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {stops.map(({ time, place }, index) => (
+                    <div key={time} className="flex items-start gap-4 group">
+                      <div className="flex flex-col items-center mt-1">
+                        <div className={`h-3 w-3 rounded-full ${colorMap[color].icon} border-2 border-white`} />
+                        {index !== stops.length - 1 && <div className="h-full w-px bg-slate-200 mt-1 mb-1 min-h-[20px]" />}
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-slate-400 block mb-0.5">{time}</span>
+                        <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">{place}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link href="/plan/itineraries" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:shadow-md transition-all">
-              View All Itineraries <ArrowRight className="h-4 w-4" />
-            </Link>
+        </section> */}
+
+        {/* GATEWAY DESTINATIONS */}
+        <section className="pt-16 pb-12">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-slate-800 mb-3">Gateway Destinations</h2>
+            <p className="text-slate-500 max-w-xl mx-auto">Pathankot is the perfect base for exploring the greater western Himalayas.</p>
           </div>
-        </div>
-      </section>
-
-      {/* Gateway Guides */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-slate-800 mb-3">Gateway Destinations</h2>
-          <p className="text-slate-500 max-w-xl mx-auto">Pathankot is the perfect base for exploring the greater western Himalayas. Here&apos;s where you can go from here.</p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {gateways.map(({ name, distance, time, desc, color }) => (
-            <Link key={name} href={`/plan/gateway/${name.toLowerCase()}`} className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all">
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-lg font-bold text-slate-800">{name}</h3>
-                <div className={`text-xs font-semibold rounded-full px-2.5 py-1 ${colorMap[color].badge}`}>{distance}</div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {gateways.map(({ name, distance, time, desc, color }) => (
+              <div key={name} className="group rounded-3xl border border-slate-100 bg-white p-7 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-xl font-bold text-slate-800">{name}</h3>
+                  <div className={`text-xs font-bold uppercase tracking-wider rounded-full px-3 py-1 ${colorMap[color].badge}`}>{distance}</div>
+                </div>
+                <p className="text-sm text-slate-500 mb-6 leading-relaxed min-h-[60px]">{desc}</p>
+                <div className="flex items-center justify-between pt-4 border-t border-slate-50">
+                  <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-400"><Navigation className="h-3.5 w-3.5" />{time} drive</span>
+                </div>
               </div>
-              <p className="text-sm text-slate-500 mb-4 leading-relaxed">{desc}</p>
-              <div className="flex items-center justify-between text-xs text-slate-400">
-                <span className="flex items-center gap-1"><Navigation className="h-3 w-3" />{time} drive</span>
-                <span className="flex items-center gap-1 text-amber-600 font-semibold group-hover:gap-2 transition-all">Guide <ArrowRight className="h-3.5 w-3.5" /></span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      {/* Accommodation CTA */}
-      <section className="bg-slate-900 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <Hotel className="h-12 w-12 text-amber-400 mx-auto mb-4" />
-          <h2 className="text-3xl font-extrabold text-white mb-4">Where to Stay</h2>
-          <p className="text-slate-400 mb-8 max-w-xl mx-auto">From budget guesthouses to comfortable hotels — find the right accommodation for your trip to Pathankot.</p>
-          <Link href="/plan/stay" className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-8 py-4 text-sm font-semibold text-slate-900 hover:bg-amber-400 shadow-lg shadow-amber-500/25 transition-all">
-            Browse Accommodation <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

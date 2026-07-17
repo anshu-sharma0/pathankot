@@ -1,4 +1,5 @@
 import { ArrowRight, PlayCircle, MapPin, Building, Activity } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -64,51 +65,26 @@ export default function HeroSection() {
             style={{ animationDelay: "0.45s" }}
           >
             {/* Primary CTA */}
-            <a
-              href="#tourism"
+            <Link
+              href="/explore"
               className="group flex items-center gap-2 rounded-full bg-amber-500 px-5 py-3 sm:px-6 sm:py-3.5 text-sm font-semibold text-slate-900 shadow-lg shadow-amber-500/30 transition-all hover:bg-amber-400 hover:shadow-amber-500/50 hover:-translate-y-0.5 active:scale-95"
             >
               Explore City
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
 
             {/* Secondary CTA */}
-            <a
-              href="#services"
+            <Link
+              href="/services"
               className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 sm:px-6 sm:py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/30 hover:-translate-y-0.5 active:scale-95"
             >
               <PlayCircle className="h-4 w-4 text-slate-300 transition-colors group-hover:text-white" />
               Citizen Services
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* ── Glassmorphism Stats Bar (Bottom) ── */}
-      <div
-        className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-black/30 backdrop-blur-xl animate-fade-in-up hidden md:block"
-        style={{ animationDelay: "0.6s" }}
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 divide-x divide-white/10 py-5">
-            {[
-              { icon: MapPin, label: "Heritage Sites", value: "45+" },
-              { icon: Building, label: "Rail Junctions", value: "3 Major" },
-              { icon: Activity, label: "Citizen Support", value: "24/7" },
-            ].map(({ icon: Icon, label, value }) => (
-              <div key={label} className="flex items-center gap-4 px-6 first:pl-0 last:pr-0">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-amber-400">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xl font-bold text-white">{value}</p>
-                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400">{label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
