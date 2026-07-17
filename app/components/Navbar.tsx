@@ -15,9 +15,10 @@ import {
 const navLinks = [
   { label: "Home", href: "#" },
   { label: "Tourism", href: "#tourism" },
-  { label: "Services", href: "#services" },
-  { label: "Transit", href: "#transit" },
-  { label: "About", href: "#about" },
+  { label: "Connectivity", href: "#transit" },
+  { label: "Culture", href: "#culture" },
+  { label: "News", href: "#news" },
+  { label: "Contacts", href: "#contacts" },
 ];
 
 export default function Navbar() {
@@ -27,7 +28,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* ── Slim top utility bar ── */}
-      <div className="bg-gradient-to-r from-slate-800 via-slate-800 to-slate-700 text-white/90 text-xs">
+      <div className="bg-linear-to-r from-slate-800 via-slate-800 to-slate-700 text-white/90 text-xs">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
@@ -68,7 +69,7 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           {/* Logo / Brand */}
           <a href="#" className="flex items-center gap-2.5 group" id="nav-brand">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-md shadow-amber-200/50 transition-transform group-hover:scale-105">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-600 shadow-md shadow-amber-200/50 transition-transform group-hover:scale-105">
               <span className="text-lg font-black text-white leading-none">P</span>
               {/* 3D lift ring */}
               <div className="absolute -inset-0.5 rounded-xl border border-amber-400/30" />
@@ -92,7 +93,7 @@ export default function Navbar() {
                   className="relative px-3.5 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 rounded-lg hover:bg-slate-50/80 group"
                 >
                   {link.label}
-                  <span className="absolute bottom-0.5 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 transition-all duration-300 group-hover:w-4/5" />
+                  <span className="absolute bottom-0.5 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-linear-to-r from-amber-400 to-orange-500 transition-all duration-300 group-hover:w-4/5" />
                 </a>
               </li>
             ))}
@@ -117,20 +118,18 @@ export default function Navbar() {
               <Globe className="h-3.5 w-3.5 text-indigo-500" />
               <span className="relative">
                 <span
-                  className={`transition-all duration-300 ${
-                    lang === "en"
+                  className={`transition-all duration-300 ${lang === "en"
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 -translate-y-2 absolute"
-                  }`}
+                    }`}
                 >
                   EN
                 </span>
                 <span
-                  className={`transition-all duration-300 ${
-                    lang === "pa"
+                  className={`transition-all duration-300 ${lang === "pa"
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-2 absolute"
-                  }`}
+                    }`}
                 >
                   ਪੰ
                 </span>
@@ -155,9 +154,8 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <ul className="flex flex-col gap-1 px-4 pb-4" id="nav-mobile-links">
             {navLinks.map((link) => (

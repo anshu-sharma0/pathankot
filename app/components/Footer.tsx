@@ -3,27 +3,27 @@ import { Heart, MapPin, Phone, Mail } from "lucide-react";
 const footerLinks = [
   {
     title: "Quick Links",
-    links: ["Home", "Tourism", "Transit", "Services", "Economy"],
+    links: ["Tourism Spotlight", "Transit & Connectivity", "Culture & Heritage", "City Map", "Emergency Contacts"],
   },
   {
     title: "Government",
-    links: ["DC Office", "Municipal Corp.", "Police", "Health Dept.", "Revenue"],
+    links: ["DC Office Pathankot", "Municipal Corporation", "Punjab Police", "Health Department", "Revenue Department"],
   },
   {
-    title: "Resources",
-    links: ["RTI Portal", "Tenders", "Careers", "Contact Us", "Sitemap"],
+    title: "Citizen Resources",
+    links: ["RTI Portal", "E-Tenders", "Public Grievances", "Download Forms", "Sitemap"],
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative mt-auto border-t border-slate-100 bg-gradient-to-b from-white to-slate-50/80">
+    <footer className="relative mt-auto border-t border-slate-100 bg-linear-to-b from-white to-slate-50/80">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-sm">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-amber-500 to-orange-600 shadow-sm">
                 <span className="text-sm font-black text-white">P</span>
               </div>
               <div>
