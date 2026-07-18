@@ -1,79 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin, Map, Plane, Leaf } from "lucide-react";
+import { PageHero } from "../components/layout/PageHero";
+import { StatsBanner } from "../components/ui/StatsBanner";
 
 export const metadata: Metadata = {
   title: "Explore Pathankot | History, Culture & Heritage",
   description: "Dive deep into the rich culture, history, and vibrant heritage of Pathankot, the gateway to Punjab and Himachal Pradesh.",
 };
 
-const highlights = [
-  {
-    icon: Landmark,
-    title: "History & Heritage",
-    description: "From the ancient Audumbara kingdom and the Pathania Rajput rulers to the first capital of Nurpur State, Pathankot carries millennia of layered history.",
-    href: "/explore/history",
-    badge: "Ancient Roots",
-    color: "amber",
-  },
-  {
-    icon: Mountain,
-    title: "Top Attractions",
-    description: "Ranjit Sagar Dam, Mukteshwar Mahadev Temple (mentioned in the Mahabharata), Nurpur Fort, and Shahpurkandi. Each site tells a different story.",
-    href: "/tourism/attractions",
-    badge: "Must-Visit",
-    color: "teal",
-  },
-  {
-    icon: Utensils,
-    title: "Culture & Cuisine",
-    description: "A unique Dogra-Punjabi-Himachali fusion culture. Famous for Bhangra, Gatka martial arts, Loi weaving, and iconic street food.",
-    href: "/explore/culture",
-    badge: "Unique Blend",
-    color: "rose",
-  },
-  {
-    icon: Calendar,
-    title: "Events & Festivals",
-    description: "Celebrate Baisakhi with grand processions, Lohri with bonfires, and local melas that capture the spirit of Punjab's northern heartland.",
-    href: "/explore/events",
-    badge: "Year-Round",
-    color: "purple",
-  },
-  {
-    icon: Plane,
-    title: "Tourism Guide",
-    description: "A comprehensive guide on Pathankot's Religious, Adventure, and Hidden tourist spots.",
-    href: "/tourism",
-    badge: "Travel",
-    color: "rose",
-  },
-  {
-    icon: Leaf,
-    title: "Environment & Ecology",
-    description: "Explore the biodiversity, rivers, wildlife, and the ecological SWOT of Pathankot.",
-    href: "/explore/environment",
-    badge: "Nature",
-    color: "emerald",
-  },
-  {
-    icon: Map,
-    title: "Geography & Demographics",
-    description: "Discover Pathankot's strategic geography, climate profile, diverse demographics, and cultural linguistic landscape.",
-    href: "/explore/geography",
-    badge: "City Profile",
-    color: "blue",
-  },
-];
-
-const quickFacts = [
-  { label: "Founded", value: "~3000 BCE" },
-  { label: "Location", value: "Punjab (NW tip)" },
-  { label: "Altitude", value: "322 m above MSL" },
-  { label: "Climate", value: "Semi-arid, subtropical" },
-  { label: "Best Season", value: "October – March" },
-  { label: "Languages", value: "Punjabi, Dogri, Hindi" },
-];
+import { quickFacts, highlights } from "../data/exploreData";
 
 const colorMap: Record<string, string> = {
   amber: "bg-amber-50 text-amber-600 border-amber-200",
@@ -96,34 +32,17 @@ export default function ExplorePage() {
   return (
     <div className="min-h-screen">
       {/* ── Page Hero ── */}
-      <section className="relative overflow-hidden bg-linear-to-br from-slate-900 via-slate-800 to-amber-950 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-400 via-transparent to-transparent" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-amber-300">
-            <MapPin className="h-3 w-3" /> Punjab, India
-          </div>
-          <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4 sm:mb-6">
-            Explore <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-orange-500">Pathankot</span>
-          </h1>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Where ancient history meets vibrant culture. Pathankot is not just a transit point — it&apos;s a destination with millennia of stories waiting to be discovered.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badgeIcon={MapPin}
+        badgeText="Punjab, India"
+        titlePrefix="Explore"
+        titleHighlight="Pathankot"
+        description="Where ancient history meets vibrant culture. Pathankot is not just a transit point — it's a destination with millennia of stories waiting to be discovered."
+        theme="amber"
+      />
 
       {/* ── Quick Facts ── */}
-      <section className="bg-white border-b border-slate-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-            {quickFacts.map(({ label, value }) => (
-              <div key={label} className="text-center p-2 sm:p-3">
-                <p className="text-base sm:text-lg font-bold text-slate-800 truncate">{value}</p>
-                <p className="text-[10px] sm:text-xs text-slate-400 mt-0.5 uppercase tracking-wider">{label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsBanner stats={quickFacts} variant="minimal" columns={6} />
 
       {/* ── Highlights Grid ── */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20">

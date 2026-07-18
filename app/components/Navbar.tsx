@@ -80,32 +80,52 @@ export default function Navbar() {
     <>
       {/* ── Slim utility bar ── */}
       <div className="bg-linear-to-r from-slate-950 via-slate-900 to-slate-950 text-slate-300 text-xs overflow-hidden border-b border-white/5">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8 font-medium overflow-x-auto whitespace-nowrap gap-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8 overflow-x-auto whitespace-nowrap [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] font-medium">
+
+          {/* Left Side */}
           <div className="flex items-center gap-6">
             <WeatherWidget variant="compact" />
-            <div className="h-3 w-px bg-slate-700/50"></div>
+
+            <div className="flex lg:hidden items-center gap-4">
+              <a
+                href="tel:112"
+                className="flex items-center gap-1.5 rounded-full bg-red-500/10 px-3.5 py-1 text-red-400 transition-all hover:bg-red-500/20 hover:text-red-300 border border-red-500/10"
+              >
+                <Phone className="h-3.5 w-3.5 animate-pulse" />
+                <span className="font-bold tracking-wider">112</span>
+                <span className="text-[11px] uppercase tracking-wider opacity-80">
+                  Emergency
+                </span>
+              </a>
+
+              <a
+                href="tel:181"
+                className="flex items-center gap-1.5 rounded-full bg-rose-500/10 px-3.5 py-1 text-rose-400 transition-all hover:bg-rose-500/20 hover:text-rose-300 border border-rose-500/10"
+              >
+                <Shield className="h-3.5 w-3.5" />
+                <span className="font-bold tracking-wider">181</span>
+                <span className="text-[11px] uppercase tracking-wider opacity-80">
+                  Women Support
+                </span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Side (Desktop Only) */}
+          <div className="hidden lg:flex items-center gap-6">
             <span className="flex items-center gap-2 hover:text-white transition-colors cursor-default">
               <Clock className="h-3.5 w-3.5 text-amber-400" />
               <span>{formatDate(new Date())}</span>
             </span>
+
             <div className="h-3 w-px bg-slate-700/50"></div>
+
             <span className="flex items-center gap-2 hover:text-white transition-colors cursor-default">
               <MapPin className="h-3.5 w-3.5 text-sky-400" />
               <span>Punjab, India • 145001</span>
             </span>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="tel:112" className="flex items-center gap-1.5 rounded-full bg-red-500/10 px-3.5 py-1 text-red-400 transition-all hover:bg-red-500/20 hover:text-red-300 border border-red-500/10">
-              <Phone className="h-3.5 w-3.5 animate-pulse" />
-              <span className="font-bold tracking-wider">112</span>
-              <span className="text-[11px] uppercase tracking-wider opacity-80">Emergency</span>
-            </a>
-            <a href="tel:181" className="flex items-center gap-1.5 rounded-full bg-rose-500/10 px-3.5 py-1 text-rose-400 transition-all hover:bg-rose-500/20 hover:text-rose-300 border border-rose-500/10">
-              <Shield className="h-3.5 w-3.5" />
-              <span className="font-bold tracking-wider">181</span>
-              <span className="text-[11px] uppercase tracking-wider opacity-80">Women Support</span>
-            </a>
-          </div>
+
         </div>
       </div>
 

@@ -3,6 +3,7 @@ import CategoryNav from './_components/CategoryNav';
 import AttractionsGrid from './_components/AttractionsGrid';
 import SeasonsGrid from './_components/SeasonsGrid';
 import NearbyPlaces from './_components/NearbyPlaces';
+import { nearbyPlaces } from './_data/content';
 
 export default function ThingsToDoPage() {
   return (
@@ -21,7 +22,7 @@ export default function ThingsToDoPage() {
         <SeasonsGrid />
 
         {/* ─── WHAT'S AROUND (NEARBY PLACES) ─── */}
-        <NearbyPlaces />
+        <NearbyPlaces places={nearbyPlaces} />
       </main>
     </div>
   );
