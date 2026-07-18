@@ -58,8 +58,8 @@ const attractions = [
     duration: "2 hours",
     rating: 4.6,
     description:
-      "Kathgarh Temple is dedicated to lord Shiva and Parvati and is characterized by an ancient lingam with mystical origins. The temple was said to have been visited by Bharat during his search for Lord Rama. The temple is located at the confluence of the Beas and the Chonch River. Marvelously built in a roman styled architecture.",
-    highlights: ["Mystical Lingam", "River Confluence", "Roman Style Architecture", "Ancient Origins"],
+      "Kathgarh Temple is dedicated to Lord Shiva and Parvati and is characterized by an ancient lingam with mystical origins. The temple was said to have been visited by Bharat during his search for Lord Rama. The temple is located at the confluence of the Beas and the Chakki rivers near Mirthal. Marvellously built in a Roman-styled architecture with twin Shivalingams said to reunite on Shivaratri.",
+    highlights: ["Mystical Twin Lingam", "Beas-Chakki Confluence", "Roman Style Architecture", "Ancient Origins"],
     badge: "Unique",
     badgeColor: "bg-purple-100 text-purple-700",
     tagColor: "text-purple-700 bg-purple-50",
@@ -99,7 +99,7 @@ const attractions = [
     id: "atal-setu",
     name: "Atal Setu (Basohli Bridge)",
     category: "Adventure",
-    distance: "60 km from city",
+    distance: "38 km from city",
     duration: "Scenic Drive",
     rating: 4.8,
     description:
@@ -114,7 +114,7 @@ const attractions = [
     id: "barth-sahib",
     name: "Gurudwara Shri Barth Sahib",
     category: "Religious",
-    distance: "11 km from city",
+    distance: "20 km from city",
     duration: "1.5 hours",
     rating: 4.7,
     description:

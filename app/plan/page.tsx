@@ -54,10 +54,10 @@ export default function PlanTripPage() {
             <div className="grid sm:grid-cols-2 gap-6 bg-slate-50 rounded-2xl p-6 border border-slate-100">
               <div>
                 <h4 className="font-semibold text-slate-800 mb-2">Pathankot Airport (IXP)</h4>
-                <p className="text-sm text-slate-600 mb-4">Located on the Pathankot to Majra Road under the Pathankot Air Force Station.</p>
+                <p className="text-sm text-slate-600 mb-4">Located on the Pathankot to Majra Road, the airport is a civil enclave within the Pathankot Air Force Station premises.</p>
 
-                <h4 className="font-semibold text-slate-800 mb-2">Alliance Air Flights</h4>
-                <p className="text-sm text-slate-600">The 70-seater airbus currently has 3 flights a week: Monday, Tuesday, and Thursday from Pathankot to New Delhi (IXP to DEL).</p>
+                <h4 className="font-semibold text-slate-800 mb-2">Flight Connectivity</h4>
+                <p className="text-sm text-slate-600">Domestic flights operate on a seasonal and limited schedule. It is strongly advised to verify current schedules before planning. Many travelers prefer using Amritsar or Jammu for more reliable connectivity.</p>
               </div>
               <div className="space-y-4">
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Clock, Shield, Swords, Landmark, MapPin, Map, Crown, Users, Target, BookOpen, Quote, CheckCircle2, Image as ImageIcon } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "History of Pathankot | Ancient Roots to Modern Era",
@@ -136,7 +137,7 @@ export default function HistoryPage() {
               <Clock className="h-3 w-3" /> Gateway to North India
             </div>
           </div>
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight mb-6">
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight mb-6 text-balance">
             The Heritage of <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-orange-500">Pathankot</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -211,9 +212,11 @@ export default function HistoryPage() {
             {galleryImages.map((src, idx) => (
               <div key={idx} className="relative h-64 overflow-hidden rounded-2xl border border-slate-200 group">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={src}
                   alt={`Pathankot Historical Image ${idx + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

@@ -5,13 +5,13 @@ export const tourismStats = [
   { label: "Nature Tourism", value: "2–3 Lakh", desc: "Eco-tourists exploring Shivalik hills" },
 ];
 
-export const hiddenPlaces = [
-  { name: "Ranjit Sagar Dam", desc: "One of Punjab's largest reservoirs. Famous for boating, photography, and mesmerizing sunset views." },
-  { name: "Shahpur Kandi", desc: "Located along the Ravi River, offering lush greenery, picnic spots, and bird watching." },
-  { name: "Madhopur Headworks", desc: "An architectural marvel offering breathtaking views of the Ravi River and ancient irrigation networks." },
-  { name: "Dhar Kalan", desc: "A pristine hilly area renowned for dense forests, trekking trails, and rural tourism." },
-  { name: "Dunera", desc: "A quiet retreat near the Himachal border, perfect for serene escapes, hill views, and bike riding." },
-  { name: "Basohli Route", desc: "A highly popular road-trip route featuring beautiful lakes, mountains, and scenic landscapes." },
+export const mustSeePlaces = [
+  { name: "Ranjit Sagar Dam", desc: "Punjab's largest reservoir on the Ravi River — 30 km from Pathankot. Spectacular sunset views, boating, and a massive engineering marvel completed in 2001." },
+  { name: "Atal Setu Bridge", desc: "A 592-meter cable-stayed bridge connecting Punjab and J&K over the dam reservoir. Best photographed at sunset. Strong winds, but stunning views." },
+  { name: "Shahpur Kandi", desc: "A scenic stretch on the Ravi River offering lush greenery, quiet picnic spots, and birdwatching. Less crowded than the main dam viewpoint." },
+  { name: "Madhopur Headworks", desc: "The historic British-era Upper Bari Doab Canal headworks on the Ravi River. Great for photography of gushing water against a hill backdrop." },
+  { name: "Dhar Kalan", desc: "A pristine forested area near the HP border — Pathankot's best-kept secret for dense jungle walks, camping, and escaping city heat." },
+  { name: "Dunera Hills", desc: "A quaint, scenic township on the road to Dalhousie. Locals stop here for the famously sweet mountain spring water and roadside dhabas." },
 ];
 
 export const religiousPlaces = [

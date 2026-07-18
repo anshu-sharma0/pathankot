@@ -65,13 +65,13 @@ export const topPlaces = [
     color: 'from-teal-400 to-emerald-600'
   },
   {
-    name: 'Hydraulic Research Station',
-    description: 'Set on the Chakki River, it examines river flow and water management. Great place to learn about hydraulic models and see displays of scale models of dams.',
-    time: '2 to 3 hours',
-    tags: ['Friends', 'Educational'],
-    type: 'Insightful tourist destination',
-    icon: Info,
-    color: 'from-cyan-500 to-blue-600'
+    name: 'Atal Setu Bridge',
+    description: 'A 592-meter-long cable-stayed engineering marvel spanning the Ranjit Sagar reservoir. It connects Punjab to J&K and provides breathtaking panoramic views. The bridge is best visited at sunset when the light turns the reservoir into a mirror of gold.',
+    time: '1 to 2 hours',
+    tags: ['Friends', 'Scenic', 'Photography'],
+    type: 'Modern engineering landmark',
+    icon: Navigation,
+    color: 'from-sky-400 to-blue-600'
   },
   {
     name: 'Shahpurkandi Fort',
@@ -106,10 +106,10 @@ export const operatingHours = [
   { place: 'Lakshmi Narayan Temple', hours: '5:00 AM – 9:00 PM', fee: 'Free' },
   { place: 'Ashapurni Temple', hours: '5:00 AM – 9:00 PM', fee: 'Free' },
   { place: 'Kathgarh Temple', hours: 'Sunrise – Sunset', fee: 'Free' },
-  { place: 'Ranjit Sagar Dam', hours: '9:00 AM – 5:00 PM', fee: 'Minimal / Free' },
+  { place: 'Ranjit Sagar Dam', hours: 'Sunrise – Sunset', fee: 'Free' },
   { place: 'Nurpur Fort', hours: 'Sunrise – Sunset', fee: 'Minimal' },
   { place: 'Shahpurkandi Fort', hours: 'Sunrise – Sunset', fee: 'Free' },
-  { place: 'Hydraulic Research Station', hours: '10:00 AM – 5:00 PM (weekdays)', fee: 'Free' },
+  { place: 'Atal Setu Bridge', hours: 'Open 24 Hours', fee: 'Toll (Vehicle)' },
 ];
 
 export const nearbyPlaces = [

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
 import { Phone, Shield, Flame, Stethoscope, Building, Droplets, Zap, Navigation, AlertTriangle, Search, Activity, User, BookOpen, Banknote, Briefcase } from "lucide-react";
 
 // --- EMERGENCY CARDS DATA ---

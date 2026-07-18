@@ -29,7 +29,7 @@ export const highlights = [
     icon: Calendar,
     title: "Events & Festivals",
     description: "Celebrate Baisakhi with grand processions, Lohri with bonfires, and local melas that capture the spirit of Punjab's northern heartland.",
-    href: "/explore/events",
+    href: "/things-to-do",
     badge: "Year-Round",
     color: "purple",
   },
@@ -60,7 +60,7 @@ export const highlights = [
 ];
 
 export const quickFacts = [
-  { label: "Founded", value: "~3000 BCE" },
+  { label: "Ancient Roots", value: "~200 BCE" },
   { label: "Location", value: "Punjab (NW tip)" },
   { label: "Altitude", value: "322 m above MSL" },
   { label: "Climate", value: "Semi-arid, subtropical" },

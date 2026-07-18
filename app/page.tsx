@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Map, Train, Shield, Compass, Mountain, MapPin } from "lucide-react";
+import { ArrowRight, Map, Train, Shield, Compass, Mountain, MapPin, Utensils, Globe } from "lucide-react";
 import HeroSection from "./components/HeroSection";
 import WeatherWidget from "./components/WeatherWidget";
+import Image from "next/image";
 
 const quickLinks = [
   {
@@ -24,6 +25,20 @@ const quickLinks = [
     href: "/support",
     icon: Shield,
     color: "rose"
+  },
+  {
+    title: "Things to Do",
+    desc: "Discover top temples, forts, dams, and activities for every type of visitor.",
+    href: "/things-to-do",
+    icon: Utensils,
+    color: "teal"
+  },
+  {
+    title: "Tourism Guide",
+    desc: "Religious, adventure, and hidden gems — your complete Pathankot tourism guide.",
+    href: "/tourism",
+    icon: Globe,
+    color: "purple"
   }
 ];
 
@@ -41,7 +56,7 @@ const featuredAttractions = [
   {
     name: "Atal Setu",
     image: "https://images.openai.com/static-rsc-4/lmdj6XfQM9wYUkEc3BWxhpupiEwyL9_Uaw8WLH2Qx0bSPm0ohOlwilQiEMvU19GPfdTvXPwdVLyllI-FG-3jL3uHc4gmVbQMsybRudRi3iTJYl_5oz9VgQgzJVuhx61wZ-IoPKlTY1hGF8iLOM3waFIHqKDQFmGvdHTOLKCokjNa_8CL9pIYAwMjj0Djh9Ng?purpose=fullsize",
-    desc: "An architectural marvel bridging Punjab, J&K, and Himachal Pradesh."
+    desc: "A 592-meter cable-stayed bridge over the Ranjit Sagar reservoir, linking Punjab to Jammu & Kashmir."
   }
 ];
 
@@ -49,6 +64,8 @@ const colorClasses: Record<string, string> = {
   emerald: "bg-emerald-50 text-emerald-600 border-emerald-200 group-hover:bg-emerald-500",
   indigo: "bg-indigo-50 text-indigo-600 border-indigo-200 group-hover:bg-indigo-500",
   rose: "bg-rose-50 text-rose-600 border-rose-200 group-hover:bg-rose-500",
+  teal: "bg-teal-50 text-teal-600 border-teal-200 group-hover:bg-teal-500",
+  purple: "bg-purple-50 text-purple-600 border-purple-200 group-hover:bg-purple-500",
 };
 
 export default function Home() {
@@ -88,7 +105,7 @@ export default function Home() {
           <p className="text-slate-500 max-w-xl mx-auto text-lg">Your digital concierge for exploring Pathankot.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {quickLinks.map((link) => {
             const Icon = link.icon;
             const style = colorClasses[link.color];
@@ -136,9 +153,12 @@ export default function Home() {
             {featuredAttractions.map((place) => (
               <div key={place.name} className="group relative rounded-3xl overflow-hidden h-[400px] border border-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={place.image}
                   alt={place.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />

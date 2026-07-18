@@ -2,14 +2,14 @@ import { Clock, Compass } from "lucide-react";
 
 export const roadDistances = [
   { city: "Mukerian", distance: "40 km" },
-  { city: "Dalhousie", distance: "70 km" },
-  { city: "Dharamshala", distance: "100 km" },
-  { city: "Palampur", distance: "100 km" },
-  { city: "Chamba", distance: "100 km" },
-  { city: "Jammu", distance: "100 km" },
+  { city: "Dalhousie", distance: "82 km" },
+  { city: "Dharamshala", distance: "90 km" },
+  { city: "Chamba", distance: "118 km" },
+  { city: "Palampur", distance: "115 km" },
+  { city: "Jammu", distance: "90 km" },
   { city: "Amritsar", distance: "108 km" },
-  { city: "Chandigarh", distance: "237 km" },
-  { city: "Delhi", distance: "481 km" },
+  { city: "Chandigarh", distance: "245 km" },
+  { city: "Delhi", distance: "490 km" },
 ];
 
 export const itineraries = [
@@ -41,9 +41,10 @@ export const itineraries = [
 ];
 
 export const gateways = [
-  { name: "Dalhousie", distance: "80 km", time: "2 hrs", desc: "Colonial-era hill station with Kalatop Wildlife Sanctuary and Dainkund peak.", color: "emerald" },
-  { name: "Dharamshala", distance: "120 km", time: "3 hrs", desc: "Home of the Dalai Lama and Tibetan govt-in-exile. Also the McLeod Ganj trekking hub.", color: "sky" },
-  { name: "Chamba", distance: "118 km", time: "3.5 hrs", desc: "Ancient town along the Ravi river with stunning Chamba temples and handicrafts.", color: "amber" },
-  { name: "Jammu", distance: "90 km", time: "2 hrs", desc: "City of temples and gateway to Kashmir. Vaishno Devi pilgrimage base.", color: "rose" },
-  { name: "Amritsar", distance: "100 km", time: "2 hrs", desc: "The Golden Temple, Wagah Border, and the beating retreat ceremony.", color: "orange" },
+  { name: "Dalhousie", distance: "82 km", time: "2.5 hrs", desc: "Colonial-era hill station with Kalatop Wildlife Sanctuary and Dainkund peak. A must-do day trip.", color: "emerald" },
+  { name: "Dharamshala", distance: "90 km", time: "2.5 hrs", desc: "Home of the Dalai Lama and Tibetan govt-in-exile. Also the McLeod Ganj trekking hub.", color: "sky" },
+  { name: "Chamba", distance: "118 km", time: "3.5 hrs", desc: "Ancient town along the Ravi river with stunning stone temples and famous Chamba Rumal embroidery.", color: "amber" },
+  { name: "Jammu", distance: "90 km", time: "2 hrs", desc: "City of temples and gateway to Kashmir. Vaishno Devi pilgrimage base at Katra (150 km).", color: "rose" },
+  { name: "Amritsar", distance: "108 km", time: "2.5 hrs", desc: "The Golden Temple, Wagah Border ceremony, and the legendary Amritsari kulcha.", color: "orange" },
+  { name: "Basohli", distance: "45 km", time: "1.5 hrs", desc: "Offbeat gem known for ancient Basohli miniature paintings and lakeside scenery on the Ranjit Sagar reservoir.", color: "purple" },
 ];

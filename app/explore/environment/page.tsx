@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Leaf, Droplets, Wind, AlertTriangle, ShieldCheck, Bird, TreePine, CloudLightning, Image as ImageIcon } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Environment & Ecology | Pathankot",
@@ -59,7 +60,7 @@ export default function EnvironmentPage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 space-y-8 lg:space-y-12">
-        
+
         {/* ── Wildlife & Forests ── */}
         <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
           <div className="flex flex-col lg:flex-row gap-10">
@@ -159,7 +160,7 @@ export default function EnvironmentPage() {
               <ShieldCheck className="h-10 w-10 text-teal-400 mb-3" />
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white text-center">Tourism & Environment SWOT</h2>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-emerald-900/30 border border-emerald-800 p-5 rounded-2xl">
                 <h3 className="text-emerald-400 font-bold mb-3 uppercase tracking-wider text-sm">Strengths</h3>
@@ -200,9 +201,11 @@ export default function EnvironmentPage() {
             {galleryImages.map((src, idx) => (
               <div key={idx} className="relative h-64 overflow-hidden rounded-2xl border border-slate-200 group">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={src} 
-                  alt={`Pathankot Nature Image ${idx + 1}`} 
+                <Image
+                  src={src}
+                  alt={`Pathankot Nature Image ${idx + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

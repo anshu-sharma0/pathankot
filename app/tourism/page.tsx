@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   description: "A comprehensive tourism guide for Pathankot featuring religious sites, adventure sports, and hidden gems.",
 };
 
-import { tourismStats, hiddenPlaces, religiousPlaces, adventureActivities, galleryImages } from "../data/tourismData";
+import { tourismStats, mustSeePlaces, religiousPlaces, adventureActivities, galleryImages } from "../data/tourismData";
+import Image from "next/image";
 
 export default function TourismPage() {
   return (
@@ -27,12 +28,12 @@ export default function TourismPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 space-y-8 lg:space-y-12">
 
         {/* ── Tourism Statistics ── */}
-        <StatsBanner 
-          stats={tourismStats} 
-          title="Tourism Overview" 
-          subtitle="Millions of tourists pass through Pathankot annually, driving a diverse travel ecosystem." 
-          variant="card" 
-          columns={4} 
+        <StatsBanner
+          stats={tourismStats}
+          title="Tourism Overview"
+          subtitle="Millions of tourists pass through Pathankot annually, driving a diverse travel ecosystem."
+          variant="card"
+          columns={4}
         />
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -40,10 +41,10 @@ export default function TourismPage() {
           <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl"><MapPin className="h-6 w-6" /></div>
-              <h2 className="text-2xl font-extrabold text-slate-800">Hidden Tourist Places</h2>
+              <h2 className="text-2xl font-extrabold text-slate-800 text-balance">Must-See Spots</h2>
             </div>
             <div className="space-y-4">
-              {hiddenPlaces.map((place, idx) => (
+              {mustSeePlaces.map((place, idx) => (
                 <div key={idx} className="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors">
                   <h4 className="font-bold text-slate-800">{place.name}</h4>
                   <p className="text-sm text-slate-500 mt-1">{place.desc}</p>
@@ -110,9 +111,11 @@ export default function TourismPage() {
             {galleryImages.map((src, idx) => (
               <div key={idx} className="relative h-64 overflow-hidden rounded-2xl border border-slate-200 group">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={src}
                   alt={`Pathankot Tourism Image ${idx + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

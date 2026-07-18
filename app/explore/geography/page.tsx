@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Map, CloudRain, Users, BookOpen, Mountain, Droplets, Sun, Wind, Church, Languages, Activity, Image as ImageIcon, MapPin } from "lucide-react";
 import WeatherWidget from "@/app/components/WeatherWidget";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Geography & Demographics of Pathankot",
@@ -106,7 +107,7 @@ export default function GeographyPage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 space-y-8 lg:space-y-12">
-        
+
         {/* ── Geography Section ── */}
         <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
           <div className="flex flex-col lg:flex-row gap-10 items-start">
@@ -157,11 +158,11 @@ export default function GeographyPage() {
               <h2 className="text-2xl font-extrabold text-slate-800">Climate Profile</h2>
             </div>
             <p className="text-slate-600 mb-6">Pathankot experiences a Humid Subtropical Climate with distinct seasonal variations, heavy monsoons, and mild to chilly winters.</p>
-            
+
             <div className="mb-10">
               <WeatherWidget variant="detailed" />
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               <div className="p-4 rounded-xl border border-rose-100 bg-rose-50/30">
                 <h4 className="font-bold text-slate-800 mb-1 flex items-center gap-2"><Sun className="h-4 w-4 text-rose-500" /> Summer</h4>
@@ -278,9 +279,11 @@ export default function GeographyPage() {
             {galleryImages.map((src, idx) => (
               <div key={idx} className="relative h-72 overflow-hidden rounded-2xl border border-slate-200 group">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={src} 
-                  alt={`Pathankot Profile Image ${idx + 1}`} 
+                <Image
+                  src={src}
+                  alt={`Pathankot Profile Image ${idx + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -289,7 +292,7 @@ export default function GeographyPage() {
             ))}
           </div>
         </section>
-        
+
       </div>
     </div>
   );
