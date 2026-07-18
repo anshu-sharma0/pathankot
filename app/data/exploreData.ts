@@ -18,14 +18,6 @@ export const highlights = [
     color: "teal",
   },
   {
-    icon: Utensils,
-    title: "Culture & Cuisine",
-    description: "A unique Dogra-Punjabi-Himachali fusion culture. Famous for Bhangra, Gatka martial arts, Loi weaving, and iconic street food.",
-    href: "/explore/culture",
-    badge: "Unique Blend",
-    color: "rose",
-  },
-  {
     icon: Calendar,
     title: "Events & Festivals",
     description: "Celebrate Baisakhi with grand processions, Lohri with bonfires, and local melas that capture the spirit of Punjab's northern heartland.",

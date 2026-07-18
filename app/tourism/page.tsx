@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Compass, MapPin, Activity, Image as ImageIcon, Church } from "lucide-react";
 import { PageHero } from "../components/layout/PageHero";
 import { StatsBanner } from "../components/ui/StatsBanner";
+import { Card, CardContent } from "../components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Tourism Guide | Discover Pathankot",
@@ -38,7 +39,7 @@ export default function TourismPage() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* ── Hidden Gems ── */}
-          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <Card className="p-6 sm:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl"><MapPin className="h-6 w-6" /></div>
               <h2 className="text-2xl font-extrabold text-slate-800 text-balance">Must-See Spots</h2>
@@ -51,10 +52,10 @@ export default function TourismPage() {
                 </div>
               ))}
             </div>
-          </section>
+          </Card>
 
           {/* ── Religious Tourism ── */}
-          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <Card className="p-6 sm:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-amber-50 text-amber-600 rounded-xl"><Church className="h-6 w-6" /></div>
               <h2 className="text-2xl font-extrabold text-slate-800">Religious Tourism</h2>
@@ -67,11 +68,11 @@ export default function TourismPage() {
                 </div>
               ))}
             </div>
-          </section>
+          </Card>
         </div>
 
         {/* ── Adventure Tourism ── */}
-        <section className="rounded-3xl bg-slate-900 p-8 sm:p-10 shadow-xl border border-slate-800 relative overflow-hidden">
+        <Card className="bg-slate-900 p-8 sm:p-10 shadow-xl border-none relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center justify-between">
             <div>
@@ -98,10 +99,10 @@ export default function TourismPage() {
               </ul>
             </div>
           </div>
-        </section>
+        </Card>
 
         {/* ── Gallery ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+        {/* <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
           <div className="text-center mb-10">
             <ImageIcon className="h-8 w-8 text-rose-500 mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800">Tourism Gallery</h2>
@@ -110,7 +111,6 @@ export default function TourismPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {galleryImages.map((src, idx) => (
               <div key={idx} className="relative h-64 overflow-hidden rounded-2xl border border-slate-200 group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <Image
                   src={src}
                   alt={`Pathankot Tourism Image ${idx + 1}`}
@@ -123,7 +123,7 @@ export default function TourismPage() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
       </div>
     </div>

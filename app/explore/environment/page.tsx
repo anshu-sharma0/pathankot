@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Leaf, Droplets, Wind, AlertTriangle, ShieldCheck, Bird, TreePine, CloudLightning, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { Card, CardContent } from "../../components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Environment & Ecology | Pathankot",
@@ -62,7 +63,7 @@ export default function EnvironmentPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 space-y-8 lg:space-y-12">
 
         {/* ── Wildlife & Forests ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+        <Card className="p-6 sm:p-10">
           <div className="flex flex-col lg:flex-row gap-10">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-6">
@@ -103,11 +104,11 @@ export default function EnvironmentPage() {
               </div>
             </div>
           </div>
-        </section>
+        </Card>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* ── Environment & AQI ── */}
-          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <Card className="p-6 sm:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-sky-50 text-sky-600 rounded-xl"><Wind className="h-6 w-6" /></div>
               <h2 className="text-2xl font-extrabold text-slate-800">Environment & AQI</h2>
@@ -128,10 +129,10 @@ export default function EnvironmentPage() {
               </div>
             </div>
             <p className="text-xs text-slate-500">Main pollution sources: Vehicles, Dust, Crop Burning (Regional), and Construction.</p>
-          </section>
+          </Card>
 
           {/* ── Climate Risks & Disaster Management ── */}
-          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <Card className="p-6 sm:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-red-50 text-red-600 rounded-xl"><CloudLightning className="h-6 w-6" /></div>
               <h2 className="text-2xl font-extrabold text-slate-800">Climate Risks</h2>
@@ -149,11 +150,11 @@ export default function EnvironmentPage() {
                 </div>
               ))}
             </div>
-          </section>
+          </Card>
         </div>
 
         {/* ── SWOT Analysis ── */}
-        <section className="rounded-3xl bg-slate-900 p-8 sm:p-10 shadow-xl border border-slate-800 relative overflow-hidden">
+        <Card className="bg-slate-900 p-8 sm:p-10 shadow-xl border-none relative overflow-hidden text-slate-300">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
           <div className="relative z-10">
             <div className="flex flex-col items-center mb-8">
@@ -188,10 +189,10 @@ export default function EnvironmentPage() {
               </div>
             </div>
           </div>
-        </section>
+        </Card>
 
         {/* ── Gallery ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+        <Card className="p-6 sm:p-10">
           <div className="text-center mb-10">
             <ImageIcon className="h-8 w-8 text-teal-500 mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800">Nature & Environment Gallery</h2>
@@ -213,7 +214,7 @@ export default function EnvironmentPage() {
               </div>
             ))}
           </div>
-        </section>
+        </Card>
 
       </div>
     </div>

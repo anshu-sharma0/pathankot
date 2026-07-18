@@ -10,7 +10,7 @@ export const mustSeePlaces = [
   { name: "Atal Setu Bridge", desc: "A 592-meter cable-stayed bridge connecting Punjab and J&K over the dam reservoir. Best photographed at sunset. Strong winds, but stunning views." },
   { name: "Shahpur Kandi", desc: "A scenic stretch on the Ravi River offering lush greenery, quiet picnic spots, and birdwatching. Less crowded than the main dam viewpoint." },
   { name: "Madhopur Headworks", desc: "The historic British-era Upper Bari Doab Canal headworks on the Ravi River. Great for photography of gushing water against a hill backdrop." },
-  { name: "Dhar Kalan", desc: "A pristine forested area near the HP border — Pathankot's best-kept secret for dense jungle walks, camping, and escaping city heat." },
+  { name: "Mini Goa (Dhar Kalan)", desc: "A pristine forested area near the HP border — Pathankot's best-kept secret for dense jungle walks, camping, and escaping city heat." },
   { name: "Dunera Hills", desc: "A quaint, scenic township on the road to Dalhousie. Locals stop here for the famously sweet mountain spring water and roadside dhabas." },
 ];
 

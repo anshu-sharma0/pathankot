@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Sun, Cloud, CloudRain, CloudLightning, CloudSnow, CloudFog, Wind, Droplets, MapPin, Loader2 } from "lucide-react";
+import { Card } from "./ui/Card";
 
 type WeatherVariant = "compact" | "detailed";
 
@@ -93,7 +94,7 @@ export default function WeatherWidget({ variant = "compact" }: WeatherWidgetProp
 
   // Detailed Variant
   return (
-    <div className="relative overflow-hidden bg-linear-to-br from-indigo-950 via-slate-900 to-indigo-900 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100 text-white">
+    <Card className="relative overflow-hidden bg-linear-to-br from-indigo-950 via-slate-900 to-indigo-900 p-6 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100 text-white">
       <div className="absolute top-0 right-0 p-8 opacity-10">
         <Icon className="h-40 w-40" />
       </div>
@@ -138,6 +139,6 @@ export default function WeatherWidget({ variant = "compact" }: WeatherWidgetProp
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

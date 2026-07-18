@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin, Map, Plane, Leaf } from "lucide-react";
 import { PageHero } from "../components/layout/PageHero";
 import { StatsBanner } from "../components/ui/StatsBanner";
+import { Card, CardContent } from "../components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Explore Pathankot | History, Culture & Heritage",
@@ -52,7 +53,9 @@ export default function ExplorePage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {highlights.map(({ icon: Icon, title, description, href, badge, color }) => (
-            <Link key={title} href={href} className="group relative flex flex-col gap-5 rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-100/50 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50">
+            <Link key={title} href={href} className="group block">
+              <Card className="relative flex flex-col gap-5 p-8 transition-all hover:-translate-y-1 hover:shadow-2xl">
+                <CardContent className="p-0 flex flex-col gap-5 h-full">
               <div className="flex items-start justify-between">
                 <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border ${colorMap[color]}`}>
                   <Icon className="h-6 w-6" />
@@ -66,6 +69,8 @@ export default function ExplorePage() {
               <div className="flex items-center gap-1.5 text-sm font-semibold text-amber-600 mt-auto group-hover:gap-2.5 transition-all">
                 Read More <ArrowRight className="h-4 w-4" />
               </div>
+              </CardContent>
+              </Card>
             </Link>
           ))}
         </div>

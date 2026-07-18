@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MapPin, Clock, Star, Navigation, Filter } from "lucide-react";
+import { MapPin, Clock, Star, Navigation } from "lucide-react";
+import CategoryFilter from "@/app/components/ui/CategoryFilter";
 
 const attractions = [
   {
@@ -18,7 +19,7 @@ const attractions = [
     badge: "Sacred Site",
     badgeColor: "bg-amber-100 text-amber-700",
     tagColor: "text-amber-700 bg-amber-50",
-    image: "https://images.unsplash.com/photo-1596481604085-79d300063f25?q=80&w=800&fit=crop",
+    image: "/images/mukteshwar.png",
   },
   {
     id: "ranjit-sagar",
@@ -33,7 +34,7 @@ const attractions = [
     badge: "Must Visit",
     badgeColor: "bg-teal-100 text-teal-700",
     tagColor: "text-teal-700 bg-teal-50",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&fit=crop",
+    image: "/images/ranjit_sagar_dam.jpeg",
   },
   {
     id: "nurpur-fort",
@@ -48,7 +49,7 @@ const attractions = [
     badge: "Historical",
     badgeColor: "bg-stone-100 text-stone-700",
     tagColor: "text-stone-700 bg-stone-50",
-    image: "https://images.unsplash.com/photo-1582555365545-c05342a78121?q=80&w=800&fit=crop",
+    image: "/images/nurpur-fort.png",
   },
   {
     id: "kathgarh",
@@ -63,7 +64,7 @@ const attractions = [
     badge: "Unique",
     badgeColor: "bg-purple-100 text-purple-700",
     tagColor: "text-purple-700 bg-purple-50",
-    image: "https://images.unsplash.com/photo-1623910271131-0361fb5cc170?q=80&w=800&fit=crop",
+    image: "/images/kathgarh.png",
   },
   {
     id: "kathlour",
@@ -78,22 +79,22 @@ const attractions = [
     badge: "Nature",
     badgeColor: "bg-emerald-100 text-emerald-700",
     tagColor: "text-emerald-700 bg-emerald-50",
-    image: "https://images.unsplash.com/photo-1475809913362-28a064ce6204?q=80&w=800&fit=crop",
+    image: "/images/kathlour.png",
   },
   {
     id: "dhar-retreat",
-    name: "Dhar Nature Retreat & Camp",
+    name: "Mini Goa (Dhar Kalan)",
     category: "Adventure",
     distance: "32 km from city",
     duration: "Full day / Overnight",
     rating: 4.7,
     description:
-      "Located in Dhar Kalan near Pathankot, the Dhar Forest and Ranjit Sagar lake area offer incredible adventure opportunities. It's a prime location for eco-tourism, trekking, nature walks, and experiencing the pristine environment of the Shivalik foothills.",
+      "Located in Dhar Kalan near Pathankot, the dense Shivalik forest and Ranjit Sagar lake area offer incredible adventure opportunities. It is Pathankot's best-kept secret — a prime location for eco-tourism, trekking, nature walks, and camping under the stars.",
     highlights: ["Eco-tourism", "Trekking", "Camping", "Lake Views"],
     badge: "Adventure",
     badgeColor: "bg-orange-100 text-orange-700",
     tagColor: "text-orange-700 bg-orange-50",
-    image: "https://images.unsplash.com/photo-1516934575971-55db5a1e2fbc?q=80&w=800&fit=crop",
+    image: "/images/minigoa.png",
   },
   {
     id: "atal-setu",
@@ -108,7 +109,7 @@ const attractions = [
     badge: "Scenic Drive",
     badgeColor: "bg-sky-100 text-sky-700",
     tagColor: "text-sky-700 bg-sky-50",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&fit=crop",
+    image: "/images/atal_setu.png",
   },
   {
     id: "barth-sahib",
@@ -123,7 +124,7 @@ const attractions = [
     badge: "Sacred",
     badgeColor: "bg-blue-100 text-blue-700",
     tagColor: "text-blue-700 bg-blue-50",
-    image: "https://images.unsplash.com/photo-1588666579227-2c9cc21d5a7d?q=80&w=800&fit=crop",
+    image: "/images/barth_sahib.png",
   }
 ];
 
@@ -155,25 +156,13 @@ export default function AttractionsPage() {
       </section>
 
       {/* Filter Bar */}
-      <div className="sticky top-[56px] sm:top-[68px] z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center gap-4 overflow-x-auto pb-1 scrollbar-hide">
-            <span className="flex items-center gap-2 text-sm font-semibold text-slate-500 shrink-0">
-              <Filter className="h-4 w-4" /> Filter:
-            </span>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`shrink-0 px-5 py-2 rounded-full text-sm font-bold transition-all ${activeCategory === cat
-                    ? "bg-teal-600 text-white shadow-md shadow-teal-200 ring-2 ring-teal-600 ring-offset-2"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+      <div className="sticky top-[64px] z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <CategoryFilter
+            categories={categories}
+            activeCategory={activeCategory}
+            onSelect={setActiveCategory}
+          />
         </div>
       </div>
 
@@ -190,7 +179,7 @@ export default function AttractionsPage() {
                 className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center group animate-fade-in-up`}
               >
                 {/* Image Side */}
-                <div className="w-full lg:w-1/2 relative h-[350px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200/60 ring-1 ring-slate-100">
+                <div className="w-full lg:w-1/2 relative h-[350px] sm:h-[450px] rounded-4xl overflow-hidden shadow-2xl shadow-slate-200/60 ring-1 ring-slate-100">
                   <Image
                     src={attraction.image}
                     alt={attraction.name}
@@ -214,7 +203,7 @@ export default function AttractionsPage() {
 
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-4">{attraction.name}</h2>
 
-                  <div className="flex flex-wrap items-center gap-5 text-sm font-semibold text-slate-500 mb-6 bg-slate-50 inline-flex p-3 rounded-xl border border-slate-100">
+                  <div className="flex-wrap items-center gap-5 text-sm font-semibold text-slate-500 mb-6 bg-slate-50 inline-flex p-3 rounded-xl border border-slate-100">
                     <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4 text-teal-600" />{attraction.distance}</span>
                     <span className="flex items-center gap-1.5"><Clock className="h-4 w-4 text-amber-600" />{attraction.duration}</span>
                     <span className="flex items-center gap-1.5"><Star className="h-4 w-4 fill-amber-400 text-amber-400" />{attraction.rating} / 5</span>

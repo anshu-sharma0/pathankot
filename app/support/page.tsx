@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Shield, Flame, Stethoscope, Building, Droplets, Zap, Navigation, AlertTriangle, Search, Activity, User, BookOpen, Banknote, Briefcase } from "lucide-react";
+import { Card, CardContent } from "../components/ui/Card";
 
 // --- EMERGENCY CARDS DATA ---
 const quickEmergency = [
@@ -157,9 +158,10 @@ export default function SupportPage() {
             <a
               key={item.name}
               href={`tel:${item.number.split(',')[0].trim()}`}
-              className="bg-white rounded-2xl p-4 shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-red-200 hover:shadow-red-100/50 transition-all group animate-fade-in-up"
+              className="group block animate-fade-in-up"
               style={{ animationDelay: `${idx * 0.05}s` }}
             >
+              <Card className="p-4 rounded-2xl hover:border-red-200 hover:shadow-red-100/50 transition-all h-full">
               <div className="flex flex-col items-center text-center">
                 <div className="h-10 w-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center mb-2 group-hover:bg-red-500 group-hover:text-white transition-colors">
                   <item.icon className="h-5 w-5" />
@@ -167,6 +169,7 @@ export default function SupportPage() {
                 <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">{item.name}</h3>
                 <p className="text-lg font-black text-slate-800 group-hover:text-red-600 transition-colors">{item.number}</p>
               </div>
+              </Card>
             </a>
           ))}
         </div>
@@ -175,7 +178,7 @@ export default function SupportPage() {
         <div className="grid lg:grid-cols-3 gap-8">
 
           {/* Law & Order */}
-          <div className="bg-white rounded-3xl p-6 shadow-md border border-slate-100 flex flex-col">
+          <Card className="p-6 shadow-md flex flex-col">
             <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
               <div className="p-3 bg-blue-50 text-blue-600 rounded-xl"><Shield className="h-5 w-5" /></div>
               <h2 className="text-xl font-extrabold text-slate-800">Police HQs</h2>
@@ -193,10 +196,10 @@ export default function SupportPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
 
           {/* Healthcare & Ambulance */}
-          <div className="bg-white rounded-3xl p-6 shadow-md border border-slate-100 flex flex-col">
+          <Card className="p-6 shadow-md flex flex-col">
             <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
               <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl"><Activity className="h-5 w-5" /></div>
               <h2 className="text-xl font-extrabold text-slate-800">Hospital & Blood Banks</h2>
@@ -214,10 +217,10 @@ export default function SupportPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
 
           {/* Disaster & Fire */}
-          <div className="bg-white rounded-3xl p-6 shadow-md border border-slate-100 flex flex-col">
+          <Card className="p-6 shadow-md flex flex-col">
             <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
               <div className="p-3 bg-orange-50 text-orange-600 rounded-xl"><Flame className="h-5 w-5" /></div>
               <h2 className="text-xl font-extrabold text-slate-800">Fire & Disaster</h2>
@@ -238,12 +241,12 @@ export default function SupportPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
 
         </div>
 
         {/* --- Tabbed Directory Section --- */}
-        <section className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden mt-12">
+        <Card className="overflow-hidden mt-12 p-0">
 
           <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
@@ -330,10 +333,10 @@ export default function SupportPage() {
               </tbody>
             </table>
           </div>
-        </section>
+        </Card>
 
         {/* Important Instructions */}
-        <section className="bg-slate-900 rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl relative overflow-hidden mb-8">
+        <Card className="bg-slate-900 p-8 sm:p-12 border-none shadow-2xl relative overflow-hidden mb-8">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_left,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center justify-between">
             <div className="md:w-2/3">
@@ -352,7 +355,7 @@ export default function SupportPage() {
               </a>
             </div>
           </div>
-        </section>
+        </Card>
 
       </div>
     </div>

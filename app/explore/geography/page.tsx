@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Map, CloudRain, Users, BookOpen, Mountain, Droplets, Sun, Wind, Church, Languages, Activity, Image as ImageIcon, MapPin } from "lucide-react";
 import WeatherWidget from "@/app/components/WeatherWidget";
 import Image from "next/image";
+import { Card, CardContent } from "../../components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Geography & Demographics of Pathankot",
@@ -109,7 +110,7 @@ export default function GeographyPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 space-y-8 lg:space-y-12">
 
         {/* ── Geography Section ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+        <Card className="p-6 sm:p-10">
           <div className="flex flex-col lg:flex-row gap-10 items-start">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-6">
@@ -147,12 +148,12 @@ export default function GeographyPage() {
               </div>
             </div>
           </div>
-        </section>
+        </Card>
 
         {/* ── Climate & Demographics Grid ── */}
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Climate */}
-          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 lg:col-span-2">
+          <Card className="p-6 sm:p-10 lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-amber-50 text-amber-600 rounded-xl"><CloudRain className="h-6 w-6" /></div>
               <h2 className="text-2xl font-extrabold text-slate-800">Climate Profile</h2>
@@ -205,10 +206,10 @@ export default function GeographyPage() {
                 <p className="text-sm text-slate-600">Generally light. Easterlies and south-easterlies dominate during the south-west monsoon season.</p>
               </div>
             </div>
-          </section>
+          </Card>
 
           {/* Demographics */}
-          <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+          <Card className="p-6 sm:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-purple-50 text-purple-600 rounded-xl"><Users className="h-6 w-6" /></div>
               <h2 className="text-2xl font-extrabold text-slate-800">Demographics</h2>
@@ -243,11 +244,11 @@ export default function GeographyPage() {
                 </div>
               </div>
             </div>
-          </section>
+          </Card>
         </div>
 
         {/* ── Insights & Outlook ── */}
-        <section className="rounded-3xl bg-slate-900 p-8 sm:p-10 lg:p-14 shadow-xl border border-slate-800 relative overflow-hidden">
+        <Card className="bg-slate-900 p-8 sm:p-10 lg:p-14 shadow-xl border-none relative overflow-hidden text-slate-300">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
           <div className="relative z-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-10 text-center">Key Insights & Future Outlook</h2>
@@ -266,10 +267,10 @@ export default function GeographyPage() {
               ))}
             </div>
           </div>
-        </section>
+        </Card>
 
         {/* ── Gallery ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
+        <Card className="p-6 sm:p-10">
           <div className="text-center mb-10">
             <ImageIcon className="h-8 w-8 text-emerald-500 mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800">Scenic Panoramas</h2>
@@ -291,7 +292,7 @@ export default function GeographyPage() {
               </div>
             ))}
           </div>
-        </section>
+        </Card>
 
       </div>
     </div>

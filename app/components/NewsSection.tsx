@@ -1,5 +1,6 @@
 import { ArrowRight, BellRing, CalendarDays } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import { Card, CardContent } from "./ui/Card";
 
 const breakingNews = [
   "Smart City Mission phase 2 initiated for Pathankot city.",
@@ -99,9 +100,9 @@ export default function NewsSection() {
           {/* List News */}
           <div className="flex flex-col gap-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             {newsItems.map((item) => (
-              <div
+              <Card
                 key={item.title}
-                className="group flex flex-1 flex-col justify-center rounded-2xl bg-white/60 p-5 shadow-sm ring-1 ring-slate-100 backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
+                className="group flex flex-1 flex-col justify-center rounded-2xl bg-white/60 p-5 shadow-sm ring-1 ring-slate-100 backdrop-blur-sm transition-all hover:bg-white hover:shadow-md border-none"
               >
                 <div className="mb-3 flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-violet-600">
@@ -117,7 +118,7 @@ export default function NewsSection() {
                 <p className="text-sm text-slate-500 line-clamp-2">
                   {item.summary}
                 </p>
-              </div>
+              </Card>
             ))}
           </div>
 

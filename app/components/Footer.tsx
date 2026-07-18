@@ -16,7 +16,7 @@ const footerColumns = [
     links: [
       { label: "Travel & Itineraries", href: "/plan" },
       { label: "Citizen Directory", href: "/support" },
-      { label: "Contact Us", href: "/contact" },
+      // { label: "Contact Us", href: "/contact" },
     ],
   }
 ];

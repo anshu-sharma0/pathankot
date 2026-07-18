@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Clock, Shield, Swords, Landmark, MapPin, Map, Crown, Users, Target, BookOpen, Quote, CheckCircle2, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { Card, CardContent } from "../../components/ui/Card";
 
 export const metadata: Metadata = {
   title: "History of Pathankot | Ancient Roots to Modern Era",
@@ -149,7 +150,7 @@ export default function HistoryPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 space-y-12">
 
         {/* ── Theories Section ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 max-w-5xl mx-auto">
+        <Card className="p-6 sm:p-10 max-w-5xl mx-auto border-none shadow-xl shadow-slate-200/50">
           <div className="text-center mb-10">
             <Quote className="h-8 w-8 text-slate-300 mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800">How did "Pathankot" get its name?</h2>
@@ -166,10 +167,10 @@ export default function HistoryPage() {
               );
             })}
           </div>
-        </section>
+        </Card>
 
         {/* ── Timeline Section ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 lg:p-14 shadow-xl shadow-slate-200/50 border border-slate-100 max-w-5xl mx-auto">
+        <Card className="p-6 sm:p-10 lg:p-14 max-w-5xl mx-auto border-none shadow-xl shadow-slate-200/50">
           <h2 className="text-3xl font-extrabold text-slate-800 mb-12 text-center">Historical Timeline</h2>
           <div className="relative border-l-2 border-slate-100 ml-4 sm:ml-6 md:ml-8 lg:ml-10 space-y-12 pb-8">
             {timeline.map((item, index) => {
@@ -199,35 +200,36 @@ export default function HistoryPage() {
               );
             })}
           </div>
-        </section>
+        </Card>
 
         {/* ── Historical Gallery Section ── */}
-        <section className="rounded-3xl bg-white p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 max-w-6xl mx-auto">
+        <Card className="p-6 sm:p-10 max-w-6xl mx-auto border-none shadow-xl shadow-slate-200/50">
           <div className="text-center mb-10">
             <ImageIcon className="h-8 w-8 text-amber-500 mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800">Glimpses of the Past</h2>
             <p className="text-slate-500 mt-2">Visual records capturing the essence of Pathankot's rich heritage.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {galleryImages.map((src, idx) => (
-              <div key={idx} className="relative h-64 overflow-hidden rounded-2xl border border-slate-200 group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <Image
-                  src={src}
-                  alt={`Pathankot Historical Image ${idx + 1}`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> */}
+          {/* {galleryImages.map((src, idx) => (
+              <div key={idx} className="relative h-64 overflow-hidden rounded-2xl border border-slate-200 group"> */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <Image
+            src={"/images/past-pkt.png"}
+            alt={`Pathankot Historical Image`}
+            width={1000}
+            height={1000}
+            // sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          {/* <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-            ))}
-          </div>
-        </section>
+            ))} */}
+          {/* </div> */}
+        </Card>
 
         {/* ── Features Section ── */}
-        <section className="rounded-3xl bg-slate-900 p-8 sm:p-12 shadow-xl overflow-hidden relative max-w-5xl mx-auto">
+        <Card className="bg-slate-900 p-8 sm:p-12 shadow-xl overflow-hidden relative max-w-5xl mx-auto text-slate-300 border-none">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
           <div className="relative z-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8 text-center">Significance of Pathankot</h2>
@@ -240,7 +242,7 @@ export default function HistoryPage() {
               ))}
             </div>
           </div>
-        </section>
+        </Card>
 
       </div>
     </div>

@@ -1,25 +1,26 @@
 import Image from "next/image";
 import { MapPin, Navigation } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import Link from "next/link";
 
 const places = [
   {
     name: "Mukteshwar Temple",
     description: "Ancient 5000-year-old cave temples carved by the Pandavas on the banks of River Ravi.",
     distance: "25 km from City Center",
-    image: "https://images.unsplash.com/photo-1596481604085-79d300063f25?q=80&w=600&h=400&fit=crop", // placeholder
+    image: "/images/mukteshwar.png",
   },
   {
     name: "Ranjit Sagar Dam",
     description: "A spectacular hydroelectric dam offering boating, lush landscapes, and perfect picnic spots.",
     distance: "16 km from City Center",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=600&h=400&fit=crop", // placeholder
+    image: "/images/ranjit_sagar_dam.jpeg",
   },
   {
     name: "Nurpur Fort",
     description: "Historic Mughal-era fort featuring the unique Brij Raj Swami temple.",
     distance: "25 km from City Center",
-    image: "https://images.unsplash.com/photo-1582555365545-c05342a78121?q=80&w=600&h=400&fit=crop", // placeholder
+    image: "/images/nurpur-fort.png",
   },
 ];
 
@@ -41,7 +42,6 @@ export default function FamousPlaces() {
           <div
             key={place.name}
             className="perspective-container animate-fade-in-up group"
-            style={{ animationDelay: `${0.1 * i}s` }}
           >
             <div className="card-3d relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100 transition-shadow hover:shadow-md">
               <div className="relative h-48 w-full overflow-hidden bg-slate-100 sm:h-56">
@@ -74,6 +74,14 @@ export default function FamousPlaces() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-8 flex justify-center">
+        <Link
+          href="/tourism/attractions"
+          className="inline-flex items-center rounded-xl bg-amber-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-amber-600 hover:shadow-lg"
+        >
+          Explore All Places
+        </Link>
       </div>
     </section>
   );

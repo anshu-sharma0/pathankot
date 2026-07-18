@@ -1,5 +1,6 @@
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
+import { Card } from './Card';
 
 interface TransportCardProps {
   icon: LucideIcon;
@@ -37,7 +38,7 @@ export function TransportCard({
   const styles = themeStyles[themeColor];
   
   return (
-    <div className={`bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row gap-8 items-stretch group transition-colors ${styles.groupHover}`}>
+    <Card className={`p-6 sm:p-10 flex flex-col md:flex-row gap-8 items-stretch group transition-colors ${styles.groupHover}`}>
       <div className="md:w-1/3 flex flex-col justify-center">
         <div className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-6 transition-colors ${styles.iconBg} ${styles.iconGroupHover}`}>
           <Icon className="h-8 w-8" />
@@ -50,6 +51,6 @@ export function TransportCard({
       <div className="md:w-2/3">
         {children}
       </div>
-    </div>
+    </Card>
   );
 }
