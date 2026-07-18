@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, Globe, ChevronDown, Shield, MapPin, Mountain, Compass, Utensils, Train, Map as MapIcon, FileText, Landmark, Waves, Sun, Leaf, Activity, Map, Clock } from "lucide-react";
+import { Menu, X, Phone, Globe, ChevronDown, Shield, MapPin, Mountain, Compass, FileText, Landmark, Leaf, Activity, Map, Clock } from "lucide-react";
 import WeatherWidget from "./WeatherWidget";
 import { formatDate } from "../utils/formatDate";
 import Image from "next/image";

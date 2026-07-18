@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, Map, Train, Shield, Compass, Mountain, MapPin, Utensils, Globe } from "lucide-react";
+import { ArrowRight, Train, Shield, Compass, MapPin, Globe } from "lucide-react";
 import HeroSection from "./components/HeroSection";
 import WeatherWidget from "./components/WeatherWidget";
-import Image from "next/image";
 import FamousPlaces from "./components/FamousPlaces";
-import { Card, CardContent } from "./components/ui/Card";
+import { Card } from "./components/ui/Card";
 
 const quickLinks = [
   {
@@ -22,7 +21,7 @@ const quickLinks = [
     color: "indigo"
   },
   {
-    title: "Support & Helplines",
+    title: "Support",
     desc: "Emergency contacts, administrative directory, and local services.",
     href: "/support",
     icon: Shield,
@@ -32,12 +31,12 @@ const quickLinks = [
     title: "Things to Do",
     desc: "Discover top temples, forts, dams, and activities for every type of visitor.",
     href: "/things-to-do",
-    icon: Utensils,
+    icon: MapPin,
     color: "teal"
   },
   {
     title: "Tourism Guide",
-    desc: "Religious, adventure, and hidden gems — your complete Pathankot tourism guide.",
+    desc: "Religious, adventure, and hidden gems. Your complete Pathankot tourism guide.",
     href: "/tourism",
     icon: Globe,
     color: "purple"
@@ -118,17 +117,17 @@ export default function Home() {
                 href={link.href}
                 className="group block"
               >
-                <Card className="relative p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden h-full">
-                <div className="flex gap-3 mb-4 items-center">
-                  <div className={`inline-flex p-3 rounded-2xl transition-colors duration-300 ${style.split(' ')[0]} ${style.split(' ')[1]} ${style.split(' ')[3]} group-hover:text-white`}>
-                    <Icon className="h-6 w-6" />
+                <Card className="relative p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden h-full">
+                  <div className="flex gap-3 mb-4 items-center">
+                    <div className={`inline-flex p-3 rounded-2xl transition-colors duration-300 ${style.split(' ')[0]} ${style.split(' ')[1]} ${style.split(' ')[3]} group-hover:text-white`}>
+                      <Icon className="h-6 w-6" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-800">{link.title}</h3>
-                </div>
-                <p className="text-slate-500 leading-relaxed text-sm mb-4">{link.desc}</p>
-                <div className="flex items-center text-sm font-semibold text-slate-400 group-hover:text-slate-800 transition-colors">
-                  Explore <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
-                </div>
+                  <h3 className="text-xl mb-2 font-bold text-slate-800">{link.title}</h3>
+                  <p className="text-slate-500 leading-relaxed text-sm mb-4">{link.desc}</p>
+                  <div className="flex items-center text-sm font-semibold text-slate-400 group-hover:text-slate-800 transition-colors">
+                    Explore <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </Card>
               </Link>
             );

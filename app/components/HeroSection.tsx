@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden pt-16 sm:pt-20 text-center"
+      className="relative flex min-h-svh w-full items-center justify-center overflow-hidden pt-16 sm:pt-20 text-center"
     >
       {/* ── Background Image ── */}
       <div className="absolute inset-0 z-0">
@@ -20,7 +20,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── Dark/Gradient Overlay ── */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-950/95" />
+      <div className="absolute inset-0 z-10 bg-linear-to-b from-slate-900/80 via-slate-900/60 to-slate-950/95" />
 
       {/* ── Main Content ── */}
       <div className="relative z-20 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 pb-24 md:pb-0 -mt-20 flex flex-col items-center justify-center">
@@ -39,7 +39,7 @@ export default function HeroSection() {
           style={{ animationDelay: "0.15s" }}
         >
           <span className="block text-slate-50 drop-shadow-lg">Pathankot City</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-500 to-orange-500 drop-shadow-md">
+          <span className="block text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-500 to-orange-500 drop-shadow-md">
             Gateway to the Hills
           </span>
         </h1>
@@ -60,7 +60,7 @@ export default function HeroSection() {
           {/* Primary CTA */}
           <Link
             href="/explore"
-            className="group flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 text-[15px] font-bold text-white shadow-xl shadow-amber-500/25 transition-all duration-300 hover:shadow-amber-500/40 hover:-translate-y-1 active:scale-95 ring-1 ring-amber-400/50"
+            className="group flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 px-8 py-4 text-[15px] font-bold text-white shadow-xl shadow-amber-500/25 transition-all duration-300 hover:shadow-amber-500/40 hover:-translate-y-1 active:scale-95 ring-1 ring-amber-400/50"
           >
             Explore City
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />

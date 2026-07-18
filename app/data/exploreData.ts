@@ -1,4 +1,4 @@
-import { Landmark, Mountain, Utensils, Calendar, Map, Plane, Leaf } from "lucide-react";
+import { Landmark, Mountain, Calendar, Map, Plane, Leaf } from "lucide-react";
 
 export const highlights = [
   {

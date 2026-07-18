@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Landmark, Mountain, Utensils, Calendar, Clock, MapPin, Map, Plane, Leaf } from "lucide-react";
+import { ArrowRight, Clock, MapPin } from "lucide-react";
 import { PageHero } from "../components/layout/PageHero";
 import { StatsBanner } from "../components/ui/StatsBanner";
-import { Card, CardContent } from "../components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Explore Pathankot | History, Culture & Heritage",
