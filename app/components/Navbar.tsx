@@ -28,31 +28,75 @@ const navGroups: NavGroup[] = [
     id: "tourism",
     label: "Tourism & Places",
     items: [
-      { label: "Tourism Guide", href: "/tourism", icon: Compass, description: "Religious, adventure & hidden gems" },
-      { label: "Top Attractions", href: "/tourism/attractions", icon: Mountain, description: "Ranjit Sagar Dam, Mukteshwar Temple" },
-      { label: "Things to Do", href: "/things-to-do", icon: Activity, description: "Activities, food and shopping" },
+      {
+        label: "Tourism Guide",
+        href: "/tourism",
+        icon: Compass,
+        description: "Discover temples, nature trails & local attractions",
+      },
+      {
+        label: "Top Attractions",
+        href: "/tourism/attractions",
+        icon: Mountain,
+        description: "Explore the city's most iconic landmarks",
+      },
+      {
+        label: "Things to Do",
+        href: "/things-to-do",
+        icon: Activity,
+        description: "Food, shopping & unforgettable experiences",
+      },
     ],
   },
   {
     id: "explore",
     label: "City Profile",
     items: [
-      { label: "Explore Overview", href: "/explore", icon: Globe, description: "The complete city overview" },
-      { label: "History & Heritage", href: "/explore/history", icon: Landmark, description: "Rajputs, Mughal era & military legacy" },
-      { label: "Environment & Ecology", href: "/explore/environment", icon: Leaf, description: "Biodiversity, rivers & eco-system" },
-      { label: "Geography & Stats", href: "/explore/geography", icon: Map, description: "Strategic location & population" },
+      {
+        label: "Explore Overview",
+        href: "/explore",
+        icon: Globe,
+        description: "Everything you need to know about Pathankot",
+      },
+      {
+        label: "History & Heritage",
+        href: "/explore/history",
+        icon: Landmark,
+        description: "Journey through centuries of rich heritage",
+      },
+      {
+        label: "Environment & Ecology",
+        href: "/explore/environment",
+        icon: Leaf,
+        description: "Forests, rivers, wildlife & natural ecosystems",
+      },
+      {
+        label: "Geography & Stats",
+        href: "/explore/geography",
+        icon: Map,
+        description: "Location, demographics & key regional facts",
+      },
     ],
   },
   {
     id: "planning",
     label: "Planning & Support",
     items: [
-      { label: "Plan Overview", href: "/plan", icon: MapPin, description: "General travel planning & itineraries" },
-      { label: "Citizen Services", href: "/services", icon: FileText, description: "Helplines and local services" },
+      {
+        label: "Plan Overview",
+        href: "/plan",
+        icon: MapPin,
+        description: "Travel tips, itineraries & visitor essentials",
+      },
+      {
+        label: "Citizen Services",
+        href: "/services",
+        icon: FileText,
+        description: "Important contacts & public services",
+      },
     ],
-  }
+  },
 ];
-
 
 
 /* ─── Main Navbar ─── */

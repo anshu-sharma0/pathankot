@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 import { quickFacts, highlights } from "../data/exploreData";
+import FeatureCard, { Color } from "../components/FeatureCard";
 
 const colorMap: Record<string, string> = {
   amber: "bg-amber-50 text-amber-600 border-amber-200",
@@ -53,25 +54,15 @@ export default function ExplorePage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {highlights.map(({ icon: Icon, title, description, href, badge, color }) => (
-            <Link key={title} href={href} className="group block">
-              <Card className="relative flex flex-col gap-5 p-8 transition-all hover:-translate-y-1 hover:shadow-2xl">
-                <CardContent className="p-0 flex flex-col gap-5 h-full">
-              <div className="flex items-start justify-between">
-                <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border ${colorMap[color]}`}>
-                  <Icon className="h-6 w-6" />
-                </div>
-                <span className={`text-xs font-semibold rounded-full px-3 py-1 ${badgeColorMap[color]}`}>{badge}</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">{title}</h3>
-                <p className="text-slate-500 leading-relaxed text-sm">{description}</p>
-              </div>
-              <div className="flex items-center gap-1.5 text-sm font-semibold text-amber-600 mt-auto group-hover:gap-2.5 transition-all">
-                Read More <ArrowRight className="h-4 w-4" />
-              </div>
-              </CardContent>
-              </Card>
-            </Link>
+            <FeatureCard
+              key={title}
+              icon={Icon}
+              title={title}
+              description={description}
+              badge={badge}
+              color={color as Color}
+              href={href}
+            />
           ))}
         </div>
       </section>

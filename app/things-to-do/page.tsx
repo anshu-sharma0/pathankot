@@ -1,5 +1,4 @@
 import HeroSection from './_components/HeroSection';
-import CategoryNav from './_components/CategoryNav';
 import AttractionsGrid from './_components/AttractionsGrid';
 import SeasonsGrid from './_components/SeasonsGrid';
 import NearbyPlaces from './_components/NearbyPlaces';
@@ -10,9 +9,6 @@ export default function ThingsToDoPage() {
     <div className="min-h-screen bg-slate-50 selection:bg-indigo-500 selection:text-white pb-24">
       {/* ─── HERO SECTION (ETHEREAL & OBSIDIAN) ─── */}
       <HeroSection />
-
-      {/* ─── STICKY NAVIGATION / CATEGORIES ─── */}
-      <CategoryNav />
 
       <main className="max-w-7xl mx-auto px-6 space-y-32 py-16">
         {/* ─── MOST LOVED PLACES (GRID) ─── */}

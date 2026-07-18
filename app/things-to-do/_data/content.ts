@@ -1,4 +1,4 @@
-import { Clock, MapPin, Info, ArrowRight, Shield, Mountain, Sunrise, CloudRain, Sun, Calendar, Navigation, History, Leaf, Camera } from 'lucide-react';
+import { Shield, Mountain, Sunrise, CloudRain, Sun, Calendar, Navigation, History, Leaf, Camera } from 'lucide-react';
 
 export const topPlaces = [
   {
@@ -8,16 +8,16 @@ export const topPlaces = [
     tags: ['Family', 'Spiritual', 'Heritage'],
     type: 'Peaceful Hindu shrine',
     icon: Shield,
-    color: 'from-amber-400 to-orange-500'
+    color: 'amber'
   },
   {
     name: 'Ashapurni Mandir',
     description: 'One of the oldest temples in Pathankot, housing the shrine of Ashapurni Mata. People travel from all around to seek blessings of the Goddess, believed to fulfil wishes of sincere devotees.',
     time: '3 to 4 hours',
     tags: ['Family', 'Spiritual'],
-    type: 'Sacred shrine amidst lush greenery',
+    type: 'Sacred shrine',
     icon: Leaf,
-    color: 'from-emerald-400 to-green-600'
+    color: 'emerald'
   },
   {
     name: 'Shani Dev Mandir',
@@ -26,7 +26,7 @@ export const topPlaces = [
     tags: ['Family', 'Spiritual'],
     type: 'Peaceful holy site',
     icon: Shield,
-    color: 'from-blue-600 to-indigo-800'
+    color: 'blue'
   },
   {
     name: 'Kathgarh Temple',
@@ -35,16 +35,16 @@ export const topPlaces = [
     tags: ['Family', 'Spiritual', 'Heritage'],
     type: 'Revered Hindu shrine',
     icon: History,
-    color: 'from-slate-400 to-slate-600'
+    color: 'slate'
   },
   {
     name: 'Kali Mata Mandir',
     description: 'An extremely well-known temple to the Hindu goddess Kali Mata. Known for its grand celebrations during Navratri. On Tuesdays, there is a special bhandaara.',
     time: '3 to 4 hours',
     tags: ['Family', 'Spiritual'],
-    type: 'Temple dedicated to Kali Mata',
+    type: 'Temple of Kali Mata',
     icon: Shield,
-    color: 'from-rose-500 to-red-700'
+    color: 'rose'
   },
   {
     name: 'Nurpur Fort',
@@ -53,16 +53,16 @@ export const topPlaces = [
     tags: ['Friends', 'Heritage', 'Views'],
     type: 'An awe-inspiring fort',
     icon: Camera,
-    color: 'from-amber-600 to-orange-800'
+    color: 'amber'
   },
   {
     name: 'Nagni Temple',
     description: 'Dedicated to the Hindu serpent goddess. Water flows from beneath the spot where the goddess Nagni Mata image sits. Hosts a massive festival every Saturday in August.',
     time: '1 to 2 hours',
     tags: ['Spiritual', 'Nature'],
-    type: 'Sacred temple for a peaceful experience',
+    type: 'Sacred temple',
     icon: Leaf,
-    color: 'from-teal-400 to-emerald-600'
+    color: 'teal'
   },
   {
     name: 'Atal Setu Bridge',
@@ -71,16 +71,16 @@ export const topPlaces = [
     tags: ['Friends', 'Scenic', 'Photography'],
     type: 'Modern engineering landmark',
     icon: Navigation,
-    color: 'from-sky-400 to-blue-600'
+    color: 'blue'
   },
   {
     name: 'Shahpurkandi Fort',
     description: 'An impressive 16th-century structure in a scenic location on the banks of the Ravi River in the Himalayan foothills. Offers stunning views.',
     time: '3 to 4 hours',
     tags: ['Friends', 'Heritage'],
-    type: 'Ancient fort dating back to the 16th century',
+    type: 'Ancient fort',
     icon: History,
-    color: 'from-stone-500 to-stone-700'
+    color: 'slate'
   },
   {
     name: 'Mukteshwar Temple',
@@ -89,16 +89,16 @@ export const topPlaces = [
     tags: ['Spiritual', 'Views'],
     type: 'Revered Hindu shrine',
     icon: Mountain,
-    color: 'from-indigo-400 to-purple-600'
+    color: 'violet'
   },
   {
     name: 'Ranjit Sagar Dam',
     description: 'Built on the River Ravi, this massive hydroelectric project offers wide, open views of water and hills. Great site to spend the day with loved ones.',
     time: '1 to 2 hours',
     tags: ['Friends', 'Nature'],
-    type: 'Technology in the midst of nature',
+    type: 'Technology in the nature',
     icon: Navigation,
-    color: 'from-sky-400 to-blue-600'
+    color: 'blue'
   },
 ];
 
