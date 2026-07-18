@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Plane, Train, Bus, MapPin, Phone, Clock, Compass, ArrowRight, Hotel, Navigation } from "lucide-react";
+import PlanYourVisit from "../things-to-do/_components/PlanYourVisit";
 
 export const metadata: Metadata = {
   title: "Plan Your Trip to Pathankot | Complete Guide",
@@ -191,43 +192,6 @@ export default function PlanTripPage() {
           </div>
         </div>
 
-        {/* ITINERARIES */}
-        {/* <section className="pt-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-slate-800 mb-3">Curated Itineraries</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">Make the most of your time with our hand-crafted travel plans.</p>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {itineraries.map(({ title, icon: Icon, tag, color, stops }) => (
-              <div key={title} className={`rounded-3xl border p-8 ${colorMap[color].card} shadow-lg shadow-slate-200/20`}>
-                <div className="flex items-start justify-between mb-8">
-                  <div>
-                    <span className={`text-xs font-bold uppercase tracking-wider rounded-full px-3 py-1 mb-3 inline-block ${colorMap[color].badge}`}>{tag}</span>
-                    <h3 className="text-2xl font-bold text-slate-800">{title}</h3>
-                  </div>
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${colorMap[color].icon}`}>
-                    <Icon className="h-7 w-7" />
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  {stops.map(({ time, place }, index) => (
-                    <div key={time} className="flex items-start gap-4 group">
-                      <div className="flex flex-col items-center mt-1">
-                        <div className={`h-3 w-3 rounded-full ${colorMap[color].icon} border-2 border-white`} />
-                        {index !== stops.length - 1 && <div className="h-full w-px bg-slate-200 mt-1 mb-1 min-h-[20px]" />}
-                      </div>
-                      <div>
-                        <span className="text-xs font-bold text-slate-400 block mb-0.5">{time}</span>
-                        <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">{place}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section> */}
-
         {/* GATEWAY DESTINATIONS */}
         <section className="pt-16 pb-12">
           <div className="text-center mb-12">
@@ -250,6 +214,7 @@ export default function PlanTripPage() {
           </div>
         </section>
 
+        <PlanYourVisit />
       </div>
     </div>
   );
