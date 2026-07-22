@@ -56,15 +56,15 @@ export default function ContactPage() {
           <div className="flex flex-col gap-8">
             <Card className="bg-slate-50 border-none shadow-sm p-6 sm:p-8">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Official Address</h3>
-              <p className="text-slate-600 mb-2">Pathankot Tourist Information Center</p>
-              <p className="text-slate-600 mb-2">Near Railway Station (PTKC)</p>
-              <p className="text-slate-600">Pathankot, Punjab, India - 145001</p>
+              <p className="text-slate-600 mb-2">District Administration Office</p>
+              <p className="text-slate-600 mb-2">Deputy Commissioner Office, Malikpur</p>
+              <p className="text-slate-600">Pathankot, Punjab, India - 145025</p>
             </Card>
 
             <Card className="bg-slate-50 border-none shadow-sm p-6 sm:p-8">
               <h3 className="text-xl font-bold text-slate-800 mb-4">Email & Phone</h3>
-              <p className="text-slate-600 mb-2">Email: tourism@pathankot.city (Demo)</p>
-              <p className="text-slate-600">Phone: +91 0186-2222222 (Demo)</p>
+              <p className="text-slate-600 mb-2">Email: dc.pkt@punjab.gov.in</p>
+              <p className="text-slate-600">Phone: +91 0186-2346464</p>
             </Card>
 
             {/* <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100">

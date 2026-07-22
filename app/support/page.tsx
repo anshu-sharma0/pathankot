@@ -16,10 +16,10 @@ const quickEmergency = [
 ];
 
 const policeContacts = [
-  { name: "SSP Office", number: "87280-33500", desc: "sspptk@gmail.com" },
+  { name: "SSP Office", number: "0186-2345570", desc: "ssp.ptk.police@punjab.gov.in" },
   { name: "District Police HQ", number: "0186-222-0070", desc: "Superintendent of Police" },
   { name: "DSP Office", number: "0186-223-5996", desc: "Deputy Superintendent" },
-  { name: "Control Room Lines", number: "0186-234-5514", desc: "Ends in 14, 16, 18" },
+  { name: "Control Room Lines", number: "87280-33500", desc: "0186-234-5514 / 16 / 18" },
 ];
 
 const healthContacts = [
@@ -162,13 +162,13 @@ export default function SupportPage() {
               style={{ animationDelay: `${idx * 0.05}s` }}
             >
               <Card className="p-4 rounded-2xl hover:border-red-200 hover:shadow-red-100/50 transition-all h-full">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-10 w-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center mb-2 group-hover:bg-red-500 group-hover:text-white transition-colors">
-                  <item.icon className="h-5 w-5" />
+                <div className="flex flex-col items-center text-center">
+                  <div className="h-10 w-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center mb-2 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">{item.name}</h3>
+                  <p className="text-lg font-black text-slate-800 group-hover:text-red-600 transition-colors">{item.number}</p>
                 </div>
-                <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1 leading-tight">{item.name}</h3>
-                <p className="text-lg font-black text-slate-800 group-hover:text-red-600 transition-colors">{item.number}</p>
-              </div>
               </Card>
             </a>
           ))}
@@ -288,7 +288,7 @@ export default function SupportPage() {
             </div>
           </div>
 
-          <div className="overflow-x-auto min-h-[400px]">
+          <div className="overflow-x-auto min-h-100">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-white border-b border-slate-100 text-xs uppercase tracking-wider text-slate-400">

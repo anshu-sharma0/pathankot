@@ -103,7 +103,7 @@ export default function PlanTripPage() {
                   <div className="bg-rose-100 p-2 rounded-lg text-rose-600"><Phone className="h-4 w-4" /></div>
                   <div>
                     <p className="text-xs font-semibold text-slate-500">General Enquiry</p>
-                    <p className="text-sm font-bold text-slate-800">131, 139</p>
+                    <p className="text-sm font-bold text-slate-800">139</p>
                   </div>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default function PlanTripPage() {
                   <h3 className="text-xl font-bold text-slate-800">{name}</h3>
                   <div className={`text-xs font-bold uppercase tracking-wider rounded-full px-3 py-1 ${colorMap[color].badge}`}>{distance}</div>
                 </div>
-                <p className="text-sm text-slate-500 mb-6 leading-relaxed min-h-[60px]">{desc}</p>
+                <p className="text-sm text-slate-500 mb-6 leading-relaxed min-h-15">{desc}</p>
                 <div className="flex items-center justify-between pt-4 border-t border-slate-50">
                   <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-400"><Navigation className="h-3.5 w-3.5" />{time} drive</span>
                 </div>

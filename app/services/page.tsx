@@ -57,10 +57,10 @@ const emergencyNumbers = [
   { label: "Police Emergency", number: "112", color: "red" },
   { label: "Ambulance (AIIMS)", number: "108", color: "rose" },
   { label: "Fire Brigade", number: "101", color: "orange" },
-  { label: "Women Helpline", number: "181", color: "purple" },
+  { label: "Women Helpline", number: "1091", color: "purple" },
   { label: "Child Helpline", number: "1098", color: "amber" },
-  { label: "Anti-Poison Helpline", number: "1800-116-117", color: "teal" },
-  { label: "Road Accident Helpline", number: "1073", color: "blue" },
+  { label: "Anti-Poison Helpline", number: "1800-11-6117", color: "teal" },
+  { label: "Road Accident Helpline", number: "1033", color: "blue" },
   { label: "Railway Enquiry", number: "139", color: "slate" },
 ];
 
@@ -80,7 +80,7 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative bg-linear-to-br from-blue-950 via-slate-900 to-slate-800 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent" />
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl tracking-tight mb-6">
             Citizen <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">Services</span>

@@ -54,7 +54,7 @@ export const highlights = [
 export const quickFacts = [
   { label: "Ancient Roots", value: "~200 BCE" },
   { label: "Location", value: "Punjab (NW tip)" },
-  { label: "Altitude", value: "322 m above MSL" },
+  { label: "Altitude", value: "332 m above MSL" },
   { label: "Climate", value: "Semi-arid, subtropical" },
   { label: "Best Season", value: "October – March" },
   { label: "Languages", value: "Punjabi, Dogri, Hindi" },

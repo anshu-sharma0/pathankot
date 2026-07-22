@@ -113,11 +113,11 @@ export const operatingHours = [
 ];
 
 export const nearbyPlaces = [
-  { name: 'Dalhousie', distance: '80 km', desc: 'Classic hill station with colonial churches, pine forests, and mountain views.' },
+  { name: 'Dalhousie', distance: '82 km', desc: 'Classic hill station with colonial churches, pine forests, and mountain views.' },
   { name: 'Dharamshala', distance: '90 km', desc: 'Home of the Tibetan government-in-exile. Buddhist monasteries and vibrant café culture.' },
-  { name: 'Kangra Fort', distance: '95 km', desc: 'One of the oldest and largest forts in the Himalayas.' },
-  { name: 'Chamba', distance: '120 km', desc: 'Mountain town of considerable antiquity, known for its ancient temples.' },
-  { name: 'Khajjiar', distance: '100 km', desc: 'Known as the Mini Switzerland of India, a beautiful high altitude meadow.' },
+  { name: 'Kangra Fort', distance: '86 km', desc: 'One of the oldest and largest forts in the Himalayas.' },
+  { name: 'Chamba', distance: '118 km', desc: 'Mountain town of considerable antiquity, known for its ancient temples.' },
+  { name: 'Khajjiar', distance: '102 km', desc: 'Known as the Mini Switzerland of India, a beautiful high altitude meadow.' },
 ];
 
 export const seasons = [
